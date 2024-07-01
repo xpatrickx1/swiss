@@ -1,0 +1,85 @@
+.quote {
+    padding: 48px 0;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+        padding: 60px 0;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        padding: 0;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            gap: 48px;
+        }
+    }
+
+
+    &__top {
+        display: flex;
+        justify-content: center;
+        
+        img {
+            max-width: 96px;
+        }
+    }
+
+    &__bottom {
+        margin: 24px 0 0;   
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 48px 0 0;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 0;
+            max-width: 540px;
+        }
+    }
+
+    &__title {
+        .fontZen(500);
+        .fontSize(22px, 28px);
+        color: @black;
+        text-align: center;
+        margin: 0 0 18px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 0 0 36px;
+            .fontSize(36px, 40px);
+        }
+    }
+
+    &__author-wrp {
+        position: relative;
+        .fontSize(16px, 24px);
+        font-style: italic;
+        color: @black;
+        text-align: center;
+        padding: 28px 0 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url("data:image/svg+xml,%3Csvg width='48' height='10' viewBox='0 0 48 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_127_3317)'%3E%3Cpath d='M48.1927 7.66792V9.27236H30.6852L26.7185 4.03858L26.5498 3.8699L25.2835 5.47353L25.198 5.6422L27.9832 9.27236H25.7888L24.2699 7.24502L24.1012 7.07796L22.412 9.27236H20.2192L22.9197 5.81169L23.0036 5.6422L21.6542 3.8699L17.518 9.27236H0V7.66792H16.5891L21.6542 1L23.9325 4.03858L24.1012 4.20725L26.5498 1.00081L31.5286 7.58399L31.6125 7.66792H48.1927Z' fill='%238BC53F'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_127_3317'%3E%3Crect width='48' height='10' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 48px;
+            height: 10px;
+        }
+    }
+
+    &__author {
+        .font(600);
+    }
+
+}

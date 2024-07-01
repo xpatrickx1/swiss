@@ -1,0 +1,140 @@
+.form {
+    background: @background[bgSecondary];
+    padding: 48px 0;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+        padding: 60px 0;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        position: relative;
+        padding: 84px 0;
+        background: @white;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background: @background[bgSecondary];
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 67%;
+          }
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__top {
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ minLG ] ) {
+            width: 100%;
+        }
+
+    }
+
+    &__bottom {
+        width: 100%;
+        border-radius: @border[buttonRadius];
+        overflow: hidden;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 0 0 48px;
+        }
+
+        
+        @media ( min-width: @sizes[ minLG ] ) {
+            max-width: 636px;
+        }
+
+        img {
+            object-fit: cover;
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            max-height: 360px;
+        }
+    }
+
+    &__title {
+        .fontZen(500);
+        .fontSize(30px, 36px);
+        color: @black;
+        text-align: center;
+        margin: 36px 0 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 0 0 48px;
+            .fontSize(48px, 60px);
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+           text-align: left;
+        }
+    }
+
+    &__text {
+        .fontSize(16px, 24px);
+        color: @black;
+        text-align: center;
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            text-align: left;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 486px;
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ minLG ] ) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            text-align: left;
+        }
+    }
+
+    input {
+        background: @white;
+        color: @color[textSecondary];
+        border-radius: @border[buttonRadius];
+        border: 1px solid @border[borderPrimary];
+        padding: 14px 24px;
+    }
+
+    .button--main {
+        margin: 24px auto 0;
+        max-width: 180px;
+        height: 48px;
+        border-radius: @border[buttonRadius];
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 48px auto 0;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 56px 0 0;
+        }
+    }
+
+}

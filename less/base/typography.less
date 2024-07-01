@@ -1,0 +1,122 @@
+.section-title,
+h1 {
+  color: @title;
+  font-size: 106px;
+  font-family: 'Zen Old Mincho', sans-serif;
+  font-weight: 500;
+  line-height: 136px;
+
+  @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxLG ] ) {
+    font-size: 66px;
+    line-height: 72px;
+  }
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+.section-title {
+
+  &--left {
+    text-align: left;
+  }
+
+  &--fz44 {
+    font-size: 44px;
+  }
+}
+
+.section-subtitle {
+  color: @color[textSecondary];
+  .font(400);
+  .fontSize(16px, 24px);
+}
+
+.item-title {
+  color: @black;
+  .fontZen(500);
+  .fontSize(18px, 24px);
+
+  @media ( min-width: @sizes[ minSM ] ) {
+    .fontSize(20px, 24px);
+
+  }
+}
+
+.item-text {
+  color: @black;
+  .font(400);
+  .fontSize(16px, 24px);
+}
+
+h2, h3, h4 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  text-align: left;
+  color: @title;
+  font-family: 'Zen Old Mincho', sans-serif;
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 20px;
+  color: @black;
+}
+
+ul, ol {
+  margin: 0 0 20px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+a {
+  color: @buttonMain;
+
+  &:hover {
+    color: @accent;
+    text-decoration: underline;
+  }
+}
+
+
+@media screen and (max-width: 1170px) {
+
+  h1 {
+    font-size: 66px;
+    margin: 0 0 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  h1 {
+    font-size: 40px;
+    line-height: 48px;
+    margin: 0 0 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 20px;
+    margin: 0 0 15px;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+
+    &--fz44 {
+      font-size: 30px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.table-content {
+    margin: 48px 0 60px;
+
+    ul {
+        list-style: none;
+
+        li {
+            &::marker {
+                display: none;
+            }
+        }
+    }
+
+    &__title {
+        .fontZen( 500 );
+        color: @black;
+        .fontSize( 20px, 28px );
+        margin: 0 0 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            .fontSize( 24px, 32px );
+            margin: 0 0 24px;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 0 0 48px;
+        }
+    }
+
+    a {
+        transition: @transition;
+    }
+}

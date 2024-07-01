@@ -1,0 +1,102 @@
+.opportunities {
+    padding: 48px 0;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+        padding: 60px 0;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        position: relative;
+        padding: 60px 0;
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__top {
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ minLG ] ) {
+            width: 100%;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            max-width: 636px;
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            max-height: 260px;
+
+            @media ( min-width: @sizes[ minSM ] ) {
+                max-height: 320px;
+            }
+    
+            @media ( min-width: @sizes[ minLG ] ) {
+                max-height: 480px;
+            }
+        }
+    }
+
+    &__bottom {
+        @media ( min-width: @sizes[ minLG ] ) {
+            max-width: 540px;
+         }
+    }
+
+    &__title {
+        .fontZen(500);
+        .fontSize(30px, 36px);
+        color: @black;
+        text-align: center;
+        margin: 36px 0 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 48px 0 36px;
+            .fontSize(60px, 72px);
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+           text-align: left;
+           margin: 0 0 36px;
+        }
+    }
+
+    &__text {
+        .fontSize(16px, 24px);
+        color: @black;
+        text-align: center;
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            text-align: left;
+         }
+    }
+
+    .button--secondary {
+        margin: 24px auto 0;
+        max-width: 129px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 36px auto 0;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 36px 0 0;
+        }
+    }
+
+}

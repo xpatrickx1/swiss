@@ -1,0 +1,31 @@
+.slickDots( @dotBg : #F2F2ED, @dotBgActive: #8BC53F ) {
+  .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 8px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slick-dots li {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: @transition;
+    list-style: none;
+    background: @dotBg;
+
+    button {
+      display: none;
+      .fontSize( 0, 0 );
+      outline: none;
+      border: none;
+    }
+
+    &.slick-active {
+      background: @dotBgActive;
+    }
+  }
+}

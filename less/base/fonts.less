@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@fontFamily : 'Zen Old Mincho', sans-serif;
+
+.fontSize( @size, @lineHeight ) {
+    font-size: @size;
+    line-height: @lineHeight;
+  }
+
+.fontZen( @fontWeight: 500 ) {
+  font-family: @fontFamily;
+  font-weight: @fontWeight;
+}
+
+.font( @fontWeight: 400 ) {
+  font-family: 'Open Sans';
+  font-weight: @fontWeight;
+}

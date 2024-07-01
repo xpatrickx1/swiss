@@ -1,0 +1,104 @@
+.areas {
+    background: @background[bgSecondary];
+    padding: 48px 0;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+        padding: 60px 0;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        position: relative;
+        padding: 84px 0;
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__top {
+        max-width: 636px;
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ minLG ] ) {
+            width: 100%;
+        }
+    }
+
+    &__bottom {
+        margin: 24px 0 0;   
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 48px 0 0;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 0;
+            max-width: 540px;
+        }
+    }
+
+    &__title {
+        .fontZen(500);
+        .fontSize(30px, 36px);
+        color: @black;
+        text-align: center;
+        margin: 0 0 36px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 0 0 48px;
+            .fontSize(60px, 72px);
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+           text-align: left;
+           margin: 0 0 60px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+         flex-wrap: nowrap;
+        }
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            width: 32%;
+        }
+
+        &-title {
+            margin: 18px 0;
+        }
+    }
+
+    &__text {
+        .fontSize(16px, 24px);
+        color: @black;
+        text-align: center;
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            text-align: left;
+         }
+    }
+
+}

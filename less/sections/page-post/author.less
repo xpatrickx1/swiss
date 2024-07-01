@@ -1,0 +1,81 @@
+.author {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+  margin: 48px auto 0;
+  padding: 24px;
+  border-radius: @border[buttonRadius];
+  border: 1px solid #E3EEF9;
+  background: @background[bgSecondary];
+
+  @media (max-width: @sizes[maxMD]) {
+    padding: 20px 25px 27px;
+  }
+
+  @media (max-width: @sizes[maxSM]) {
+    padding: 33px 18px;
+  }
+
+  &__top {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+
+    @media (max-width: @sizes[maxSM]) {
+      gap: 12px;
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+
+    @media (max-width: @sizes[maxSM]) {
+      gap: 3px 5px;
+    }
+  }
+
+  &__photo {
+
+    img {
+      min-width: 71px;
+      height: 71px;
+      border-radius: 50%;
+
+      @media (max-width: @sizes[maxSM]) {
+        min-width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  &__title {
+    width: 100%;
+    .fontZen( 500 );
+    .fontSize( 20px, 28px );
+    color: @black;
+
+    @media (min-width: @sizes[minSM]) {
+      .fontSize( 24px, 32px );
+    }
+  }
+
+  &__writen {
+    width: 100%;
+    .fontZen( 500 );
+    .fontSize( 18px, 20px );
+    color: @buttonMain;
+  }
+
+
+  &__university {
+    width: 100%;
+    .font( 400 );
+    .fontSize( 14px, 20px );
+    color: @color[textSecondary];
+  }
+  
+}

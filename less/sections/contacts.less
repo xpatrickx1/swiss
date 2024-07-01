@@ -1,0 +1,121 @@
+.contacts {
+    padding: 48px 0 24px;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+        padding: 60px 0;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        position: relative;
+        padding: 84px 0 120px;
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            display: grid;
+            grid-template-areas:
+            "top top"
+            "phone  ."
+            "address  up"
+            "social  .";
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            background: @border[borderPrimary];
+            width: 100%;
+            max-width: 900px;
+
+            @media ( min-width: @sizes[ minSM ] ) {
+                max-width: @sizes[ minSM ];
+            }
+        }
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        grid-area: top;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 0 36px;
+        }
+    }
+
+    &__email {
+        .fontZen(500);
+        .fontSize(26px, 34px);
+        color: @black;
+        margin: 18px 0 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            .fontSize(48px, 48px);
+            margin: 0;
+        }
+    }
+
+    &__phone {
+        .fontZen(500);
+        .fontSize(22px, 28px);
+        color: @black;
+        margin: 0 0 24px;
+        grid-area: phone;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 0 0 36px;
+            .fontSize(36px, 40px);
+        }
+    }
+
+    &__address {
+        .font(400);
+        .fontSize(16px, 24px);
+        color: @black;
+        margin: 0 0 24px;
+        grid-area: address;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 0 0 48px;
+            max-width: 300px;
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin: 0 0 18px;
+        grid-area: social;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            flex-direction: row;
+        }
+
+        a {
+            .font(400);
+            .fontSize(16px, 24px);
+            color: @black;
+        }
+    }
+
+    .button--arrow {
+        grid-area: up;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            justify-self: end;
+            align-self: start;
+        }
+    }
+}

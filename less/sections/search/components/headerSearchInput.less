@@ -1,0 +1,140 @@
+.search {
+  margin: 0;
+  @media ( min-width: @sizes[ minSM ] ) {
+    display: none;
+  }
+
+  @media ( max-width: @sizes[ maxSM ] ) {
+    padding: 10px 15px;
+  }
+
+  form {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-field {
+    width: 100%;
+    .font( 400 );
+    .fontSize( 14px, 17px );
+    color: @headerInputSearch[ color ];
+    background: @headerInputSearch[ bg ];
+    border-radius: @headerInputSearch[ radius ];
+    box-shadow: @headerInputSearch[ shadow ];
+    border: @headerInputSearch[ border ];
+    padding: 8.5px 45px;
+    outline: none;
+    transition: @transition;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      .fontSize( 12px, 16px );
+      color: @headerInputSearch[ colorMobile ];
+      background: @headerInputSearch[ bgMobile ];
+      border: @headerInputSearch[ borderMobile ];
+      padding: 10px 38px 10px 10px;
+    }
+
+    &::placeholder {
+      color: @headerInputSearch[ placeholder ];
+    }
+
+    &:focus {
+      color: @headerInputSearch[ colorFocus ];
+      background: @headerInputSearch[ bgFocus ];
+      box-shadow: @headerInputSearch[ shadowFocus ];
+      border: @headerInputSearch[ borderFocus ];
+
+      @media ( max-width: @sizes[ maxSM ] ) {
+        color: @headerInputSearch[ colorMobileFocus ];
+        background: @headerInputSearch[ bgMobileFocus ];
+        border: @headerInputSearch[ borderMobileFocus ];
+      }
+    }
+  }
+
+  .btn-submit {
+    display: none;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      position: absolute;
+      z-index: 1;
+      right: 5px;
+      .headerButtonSearch();
+    }
+  }
+
+  & .ui-menu.ui-autocomplete {
+    margin-top: 5px;
+    overflow: hidden;
+    background: @menuSearch[ menuBg ];
+    border: @menuSearch[ menuBorder ];
+    box-shadow: @menuSearch[ menuShadow ];
+    border-radius: @menuSearch[ menuRadius ];
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      margin-top: 0;
+      width: 100%;
+      left: 0;
+      top: calc( 100% - 1px );
+      border: @menuSearch[ menuBorderMobile ];
+      box-shadow: @menuSearch[ menuShadowMobile ];
+      border-radius: 0;
+    }
+  }
+
+  .ui-autocomplete-group.ui-menu-item {
+    .font( 400 );
+    .fontSize( 12px, 14px );
+    padding: 6px 15px;
+    transition: @transition;
+    background: @menuSearch[ groupBg ];
+    color: @menuSearch[ groupColor ];
+  }
+
+  .ui-menu li.ui-menu-item a {
+    display: block;
+    .font( 400 );
+    .fontSize( 14px, 17px );
+    padding: 5px 15px;
+    background: @menuSearch[ itemBg ];
+    color: @menuSearch[ itemColor ];
+    border: none;
+    transition: @transition;
+    margin: 0;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      .fontSize( 12px, 14px );
+    }
+
+    b {
+      .font();
+      text-decoration: underline;
+      color: @menuSearch[ itemColorFind ];
+    }
+
+    &:hover {
+      @media ( min-width: @sizes[ minLG ] ) {
+        background: @menuSearch[ itemBgHover ];
+        color: @menuSearch[ itemColorHover ];
+
+        b {
+          color: @menuSearch[ itemColorFindHover ];
+        }
+      }
+    }
+  }
+
+  #allResults {
+    margin: 10px 15px 20px;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      margin: 7px 15px 10px;
+    }
+  }
+
+  #allResults a {
+    .buttonResult();
+  }
+  
+}

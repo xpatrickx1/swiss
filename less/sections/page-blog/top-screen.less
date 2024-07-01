@@ -1,0 +1,234 @@
+.top-screen {
+  position: relative;
+  padding: 0;
+  
+  
+  @media ( min-width: @sizes[ minSM ] ) {
+    padding: 0 0 60px;
+  }
+
+  @media ( min-width: @sizes[ minLG ] ) {
+    padding: 0 0 120px;
+  }
+
+  @lineHeight : 84px;
+  @lineHeightTab : 60px;
+  @lineHeightMob : 24px;
+
+  @media ( max-width: @sizes[ maxLG ] ) {
+    @lineHeight : 60px;
+  }
+
+  @media ( min-width: @sizes[ minLG ] ) {
+    @lineHeight : 84px;
+  }
+  
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    background: @accent;
+    height: @lineHeight;
+    width: calc( (100% - @sizes[minLG]) / 2);
+    left: 0;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      width: calc( (100% - @sizes[minSM]) / 2);
+      height: @lineHeightTab;
+    }
+
+    @media ( max-width: @sizes[ maxMD ] ) {
+      width: calc( ((100% - @sizes[minSM]) / 2) + 18px );
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      height: @lineHeightMob;
+      width: 18px;
+    }
+  }
+
+  &:before {
+    top: @lineHeight * 3;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      top: @lineHeightTab * 3;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      top: 92px;
+    }
+  }
+  &:after {
+    top: @lineHeight * 5;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      top: @lineHeightTab * 5;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      top: 140px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    background: @accent;
+    height: @lineHeight;
+    width: 50%;
+    left: 0;
+    top: @lineHeight;
+    z-index: 1;
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+      height: @lineHeightTab;
+      top: @lineHeightTab;
+      max-width: 368px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      height: @lineHeightMob;
+      top: 44px;
+      max-width: 40%;
+    }
+
+    @media ( min-width: @sizes[ minMD ] ) {
+      max-width: 40%;
+    }
+  }
+
+  .container {
+    position: relative;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      background: @accent;
+      height: 84px;
+      width: calc( (100% - @sizes[minLG]) / 2);
+      left: 0;
+    }
+  }
+
+  h1 {
+    color: @black;
+    .fontSize(30px, 36px);
+    margin: 12px 0 24px;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      .fontSize(60px, 72px);
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      max-width: 500px;
+    }
+  }
+
+  &__breadcrumbs {
+    padding: 112px 0 0;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      padding: 180px 0 0;
+    }
+  }
+
+  &__wrap {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      background: linear-gradient(270deg, rgba(242, 242, 237, 0) 0%, #F2F2ED 50%);
+      border-radius: 24px;
+      min-height: 348px;
+      padding: 0 0 44px 44px;
+
+      @media ( min-width: @sizes[ minSM ] ) {
+        padding: 0 0 60px 60px;
+      }
+
+      @media ( min-width: @sizes[ minLG ] ) {
+        padding: 84px;
+      }
+
+      img {
+        width: 100%;
+      }
+  }
+
+  &__description {
+    color: @color[textSecondary];
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      max-width: 636px;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      max-width: 540px;
+    }
+  }
+
+  &__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 480px;
+  }
+
+  .post {
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 18px auto 0;
+    }
+
+    &__title {
+      .fontZen(500);
+      .fontSize(24px, 32px);
+      color: @black;
+      text-align: center;
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &__thumbnail {
+      position: relative;
+      overflow: hidden;
+      border-radius: @border[itemRadius];
+      width: 480px;
+      height: 258px;
+
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &__date {
+      .fontSize(14px, 20px);
+      color: @color[textSecondary];
+      text-align: center;
+      margin: 12px 0 0;
+    }
+  }
+
+
+  .button__arrow {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+    }
+  }
+  
+}

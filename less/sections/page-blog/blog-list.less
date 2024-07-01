@@ -1,0 +1,241 @@
+.blog {
+  padding: 48px 0;
+
+  @media ( max-width: @sizes[ minSM ] ) {
+    padding: 60px 0;
+  }
+
+  @media ( min-width: @sizes[ minLG ] ) {
+    padding: 120px 0;
+}
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+
+    @media ( max-width: @sizes[ maxMD ] ) {
+      grid-gap: 20px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+ 
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 0 9px;
+
+
+    &:nth-child( 3 ) {
+      @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxMD ] ) {
+        display: none;
+      }
+    }
+
+  }
+
+  &__thumbnail {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    border-radius: @border[itemRadius];
+  }
+
+  .item__img {
+    display: block;
+    width: 100%;
+    max-width: 306px;
+    height: 220px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: @border[itemRadius];
+    overflow: hidden;
+  }
+
+  .item-title {
+    text-align: center;
+  }
+
+  .item__date {
+    .fontSize(14px, 20px);
+      color: @color[textSecondary];
+      text-align: center;
+      margin: 12px 0 0;
+  }
+  
+
+  .item__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .item__title {
+    display: block;
+    .font(500);
+    .fontSize(20px, 24px);
+    margin: 6px 0 12px;
+    height: 100%;
+    color: @black;
+  }
+
+  .item--bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .item__date {
+    .font(400);
+    color: @color[textSecondary];
+    .fontSize(14px, 21px);
+  }
+
+  .item__views {
+    display: flex;
+    align-items: center;
+    .font();
+    .fontSize(14px, 21px);
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    padding: 0 0 128px calc( (100% - @sizes[minLG]) / 2);
+
+    @media ( max-width: @sizes[ maxLG ] ) {
+        padding: 0 0 100px 128px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+        padding: 0 0 0 18px;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        display: grid;
+        padding: 0 calc((100% - 1272px) / 2) 0;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        background: @border[borderPrimary];
+        height: 1px;
+        width: calc(100% - 50% - 90px );
+        bottom: 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            width: calc( 768px / 2 - 66px );
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            display: none;
+        }
+    }
+
+    &:before {
+        left: 18px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            left: calc( (100% - 768px) / 2 );
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            left: calc( (100% - @sizes[ minLG ]) / 2 );
+        }
+    }
+
+    &:after {
+        right: 18px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            right: calc( (100% - 768px) / 2 );
+        }
+        
+        @media ( min-width: @sizes[ minLG ] ) {
+            right: calc( (100% - @sizes[ minLG ]) / 2 );
+        }
+    }
+
+    .slick-list,
+    .slick-track {
+      display: flex;
+      max-height: 500px;
+
+      @media ( min-width: @sizes[ minSM ] ) {
+        max-height: 100%;
+      }
+    }
+  
+    .slick-slide {
+        display: flex;
+        width: 244px;
+        height: fit-content;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            width: 306px;
+            height: 100%;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            width: 403px;
+            height: 100%;
+        }
+ 
+
+        img {
+            margin:  0 0 -7px;
+        }
+    }
+
+    
+  
+    .slick-track {
+      padding-bottom: 84px;
+
+      @media ( min-width: @sizes[ minSM ] ) {
+        padding-bottom: 0;
+      }
+    }
+  
+    .slick-prev.arrow--main, .slick-prev.arrow--second {
+        left: calc(50% - 54px);
+    
+            @media (min-width: @sizes[ minLG ] ) {
+                left: calc(50% - 54px);
+            }
+    }
+    
+    .slick-next.arrow--main, .slick-next.arrow--second {
+        left: unset;
+        right: calc(50% - 60px);
+
+        @media (min-width: @sizes[ minLG ] ) {
+            right: calc(50% - 60px);
+        }
+    }
+  
+  }
+
+  .button--secondary {
+    margin: 48px auto 0;
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      display: none;
+    }
+  }
+}

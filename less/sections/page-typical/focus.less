@@ -1,0 +1,95 @@
+.focus {
+    padding: 48px 0;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+        padding: 60px 0;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+        position: relative;
+        padding: 84px 0;
+        background: @white;
+
+        &:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 65%;
+          }
+    }
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__top {
+        max-width: 636px;
+
+        @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ minLG ] ) {
+            width: 100%;
+        }
+    }
+
+    &__bottom {
+        margin: 24px 0 0;   
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 48px 0 0;
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            margin: 0;
+            max-width: 540px;
+        }
+    }
+
+    &__title {
+        .fontZen(500);
+        .fontSize(30px, 36px);
+        color: @black;
+        text-align: center;
+        margin: 0 0 24px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+            margin: 0 0 36px;
+            .fontSize(60px, 72px);
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+           text-align: left;
+        }
+    }
+
+    &__text {
+        .fontSize(16px, 24px);
+        color: @black;
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            text-align: left;
+         }
+
+         ul li {
+            margin: 0 0 12px;
+
+            &::marker {
+                color: @background[bgColorSecondary];
+              }
+         }
+    }
+
+}
