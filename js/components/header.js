@@ -1,7 +1,29 @@
-// $('.js-hamburger').click(() => {
-//     $('body').toggleClass('is-open');
-//     $('body').toggleClass('no-scroll');
-// });
+const bodyEl = document.querySelector('body');
+const toggle = document.querySelector('.js-hamburger');
+const content = document.querySelector('.header__navigation');
+
+const show = () => {
+    bodyEl.classList.add('is-open');
+    bodyEl.classList.add('no-scroll');
+};
+
+const hide = () => {
+    bodyEl.classList.remove('is-open');
+    bodyEl.classList.remove('no-scroll');
+};
+
+toggle.addEventListener('click', event => {
+    bodyEl.classList.contains('is-open') ? hide() : show();
+});
+
+const handleClosure = event => {
+    if (!content.contains(event.target) && !toggle.contains(event.target)) {
+        hide();
+    }
+};
+
+window.addEventListener('click', handleClosure);
+window.addEventListener('focusin', handleClosure);
 
 
 $( window ).scroll( scroll, scroll() );
@@ -42,48 +64,6 @@ $(window).bind('load', function() {
 
    
 });
-
-// document.addEventListener('click' , e => {
-//     // console.log(document.querySelector( 'body' ).classList.contains( 'is-open' ));
-//     // console.log(!document.querySelector('.header__navigation').contains(e.target));
-//     console.log(1);
-//     if( document.querySelector( 'body' ).classList.contains( 'is-open' ) && !document.querySelector('.header__navigation').contains(e.target) && e.target !== document.querySelector('.js-hamburger') ) {
-//         document.querySelector('.js-hamburger').click();
-//         console.log(2);
-//         return;
-//     }
-// });
-
-// $(document).on('click' , e => {
-//     if( $( 'body' ).hasClass( 'is-open' ) && e.target !== $('.header__navigation')[0] && e.target !== $('.js-hamburger') ) {
-//         // $('body').removeClass('is-open');
-//         $('body').toggleClass('no-scroll');
-//         console.log(1);
-//     }
-// });
-
-
-const bodyEl = document.querySelector('body');
-const toggle = document.querySelector('.js-hamburger');
-const content = document.querySelector('.header__navigation');
-
-const show = () => {
-    bodyEl.classList.add('is-open');
-};
-
-const hide = () => {
-    bodyEl.classList.remove('is-open');
-};
-
-toggle.addEventListener('click', event => {
-    console.log(1);
-    bodyEl.classList.contains('is-open') ? hide() : show();
-});
-
-const handleClosure = event => !content.contains(event.target) && hide();
-
-window.addEventListener('click', handleClosure);
-window.addEventListener('focusin', handleClosure);
 
 
 jQuery('.header__navigation li').hover(function() {

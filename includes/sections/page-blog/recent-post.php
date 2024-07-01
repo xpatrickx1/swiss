@@ -88,7 +88,7 @@ while (have_posts()) : the_post(); ?>
 
 <div class="subject__item" id="post-<?php the_ID(); ?>">
 
-    <?php if( get_field('featured_sample') ) {
+    <?php if( get_field('featurezd_sample') ) {
         echo '<span class="item__trending">Trending</span>';
     } ?>
 

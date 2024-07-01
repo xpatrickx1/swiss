@@ -38,6 +38,11 @@
                         endif; 
                     ?>
 
+                    <li class="header__contacts">
+                        <div class="contacts__title">Contact us</div>
+                        <?php get_template_part('includes/modules/contacts')?>
+                    </li>
+
             </ul>
             
             
