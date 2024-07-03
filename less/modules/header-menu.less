@@ -126,6 +126,10 @@
 .header.header-fixed {
   background: none;
 
+  @media ( max-width: @sizes[ maxSM ] ) {
+    background: @white;
+  }
+
   .navigation {
     padding: 0 24px;
     background-color: @background[bgSubduedPrimary];
