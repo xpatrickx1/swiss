@@ -9,7 +9,7 @@
 
             <div class="content--center">
                 <?php get_template_part('includes/sections/post/table-content')?>
-                <a href="#" class="button--arrow-up">Scroll Up</a>
+                <a href="#" class="button--arrow-up button-desktop">Scroll Up</a>
 
                 <?php
                     if (have_posts() ) {

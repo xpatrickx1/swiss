@@ -15,53 +15,26 @@ $( '.table-content a' ).click(function(e) {
     }
 });
 
-const sections = document.querySelectorAll('.content--center *[id]');
-
-window.addEventListener('scroll', navHighlighter);
-
-function navHighlighter() {
-    let scrollY = window.scrollY ;
-    // console.log(sections.length);
-    
-    sections.forEach((current, i) => {
-        // console.log(sections[i]);
-        // console.log(i);
-        
-        const sectionTop = current.offsetTop;
-        const sectionId = current.getAttribute('id');
-        if ( i + 1 <= sections.length) {
-            const nextElId = sections[i + 1];
-            console.log(nextElId);
-            const nextElIdTop = nextElId.offsetTop;
-            const sectionHeight = nextElIdTop - sectionTop;
-            // let distance = getDistanceBetweenElements(
-            //     document.getElementById(sectionId),
-            //     document.getElementById(nextElId)
-            // );
-                
-            // if (!!document.querySelector('.tble-content__list a[href*=' + sectionId + ']')) {
-                
-           
-            if (
-                scrollY > sectionTop &&
-                scrollY <= sectionTop + sectionHeight + 500
-            ){
-                // console.log('sectionTop', current);
-                // console.log('scrollY', scrollY);
-                // console.log('sectionTop', sectionTop);
-                // console.log('nextElIdTop', nextElIdTop);
-                // console.log('sectionHeight', sectionHeight);
-                document.querySelector('.table-content__list a[href*=' + sectionId + ']').classList.add('active');
-            } else {
-                document.querySelector('.table-content__list a[href*=' + sectionId + ']').classList.remove('active');
-            }
-            // }
-        }
-        
-        
-    });
-}
  
+const sections = document.querySelectorAll('.main .content--center *[id]');
+const navLi = document.querySelectorAll('.table-content__list a');
+
+window.onscroll = () => {
+    let current = '';
+    
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop + 200) {
+            current = section.getAttribute('id'); }
+    });
+
+    navLi.forEach((li) => {
+        li.classList.remove('active');
+    });
+
+    current.length && document.querySelector('.table-content__list a[href*=' + current + ']').classList.add('active');
+};
+
 
 $('.recent-post__slider')
 
