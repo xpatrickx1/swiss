@@ -67,6 +67,10 @@
       flex-grow: 1;
     }
 
+    @media ( max-width: @sizes[ maxSM ] ) {
+      flex-grow: 0;
+    }
+
     img {
       @media (min-width: @sizes[ minSM ]) {
         min-width: 176px;
@@ -87,6 +91,10 @@
 
     @media ( min-width: @sizes[ minSM ] ) and ( max-width: @sizes[ maxLG ] ) {
       margin-right: 10px;
+    }
+
+    @media ( max-width: @sizes[ maxSM ] ) {
+      display: none;
     }
 
   }
@@ -126,7 +134,14 @@
       height: 1.67px;
       border-radius: 10px;
       background: @background[ hamburger ];
-      transition: all 0ms;
+
+      @media ( max-width: @sizes[ maxLG ] ) {
+        transition: all 0ms;
+      }
+
+      @media ( max-width: @sizes[ maxSM ] ) {
+        transition: all @transition;
+      }
     }
 
     .hamburger-line1 {
@@ -163,7 +178,14 @@
       .hamburger-line2,
       .hamburger-line3 {
         background: @background[ hamburgerOpen ];
-        transition: all 0s;
+
+        @media ( max-width: @sizes[ maxLG ] ) {
+          transition: all 0ms;
+        }
+  
+        @media ( max-width: @sizes[ maxSM ] ) {
+          transition: all @transition;
+        }
       }
 
       .hamburger-line1 {

@@ -88,3 +88,12 @@ $( '.search__wrap .search-field' ).each( function( index ) {
 function showAllSearchResults(index) {
     $('.search__wrap .btn-submit').eq( index ).click();
 }
+
+$('.search-field').on('keyup', function() {
+    var input = $(this);
+    if(input.val().length === 0) {
+        input.addClass('empty');
+    } else {
+        input.removeClass('empty');
+    }
+});

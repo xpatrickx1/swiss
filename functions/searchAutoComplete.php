@@ -1,6 +1,6 @@
 <?php
 add_action('wp_enqueue_scripts', function () {
-    if ( is_post_type_archive( 'blog' ) || is_tax( array('sample-category', 'types-category') ) || is_singular('blog') || is_page_template('pages/page-alphabet.php') ) {
+    if ( is_post_type_archive( 'blog' ) || is_tax( array('blog', 'blog') ) || is_singular('blog') || is_category() ) {
         wp_enqueue_script(
           'autocomplete-search', get_stylesheet_directory_uri() . '/js/search/searchForm.js',
           ['jquery', 'jquery-ui-autocomplete'], null, true);
@@ -34,7 +34,7 @@ function awp_autocomplete_search()
 
     $args = array(
         'search' => strtolower($_GET['term']),
-        'taxonomy' => 'sample-category',
+        'taxonomy' => 'blog',
         'orderby' => 'name',
         'order' => 'ASC',
         'hide_empty' => false,
@@ -66,7 +66,7 @@ function awp_autocomplete_search()
                 'id' => get_the_ID(),
                 'label' => get_the_title(),
                 'link' => get_the_permalink(),
-                'type' => 'Samples'
+                // 'type' => 'Samples'
             ];
         }
         wp_reset_postdata();

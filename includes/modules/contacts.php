@@ -66,7 +66,7 @@
                 <?php endforeach; ?>
             </div>
 
-            <a href="#" class="button--arrow">Scroll Up</a>
+            <a href="#" class="button--arrow-up">Scroll Up</a>
         </div>
             
     </div>

@@ -1,5 +1,15 @@
 .table-content {
-    
+    @media ( min-width: @sizes[ minLG ] ) {
+        position: sticky;
+        display: grid;
+        top: 100px;
+        right: 0;
+        min-width: 240px;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
 
     ul {
         list-style: none;

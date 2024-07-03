@@ -8,8 +8,8 @@ function create_toc($html) {
         $dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
         libxml_clear_errors();
         $toc = '<div class="table-content">
-            <div class="table-content__title">Contents:</div>
-            <ul class="table-content__list">';
+                <div class="table-content__title">Contents:</div>
+                <ul class="table-content__list">';
         $h2_status = 0;
         $h3_status = 0;
         $i = 1;

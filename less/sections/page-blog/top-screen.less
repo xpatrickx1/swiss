@@ -135,13 +135,13 @@
       position: relative;
       display: flex;
       justify-content: space-between;
-      background: linear-gradient(270deg, rgba(242, 242, 237, 0) 0%, #F2F2ED 50%);
+      background: @background[bgSecondary];
       border-radius: 24px;
       min-height: 348px;
-      padding: 0 0 44px 44px;
+      padding: 0 44px 44px;
 
       @media ( min-width: @sizes[ minSM ] ) {
-        padding: 0 0 60px 60px;
+        padding: 0 66px 60px;
       }
 
       @media ( min-width: @sizes[ minLG ] ) {
@@ -167,11 +167,15 @@
 
   &__right {
     position: relative;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 50%;
     max-width: 480px;
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      display: flex;
+    }
   }
 
   .post {

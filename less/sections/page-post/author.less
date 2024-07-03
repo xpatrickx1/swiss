@@ -2,18 +2,21 @@
   display: flex;
   justify-content: flex-start;
   gap: 24px;
-  margin: 48px auto 0;
+  margin: 84px auto 0;
   padding: 24px;
   border-radius: @border[buttonRadius];
   border: 1px solid #E3EEF9;
   background: @background[bgSecondary];
+  width: 100%;
 
-  @media (max-width: @sizes[maxMD]) {
-    padding: 20px 25px 27px;
+  @media (max-width: @sizes[maxLG]) {
+    margin: 100px auto 0;
+    padding: 24px;
   }
 
   @media (max-width: @sizes[maxSM]) {
     padding: 33px 18px;
+    margin: 48px auto 0;
   }
 
   &__top {

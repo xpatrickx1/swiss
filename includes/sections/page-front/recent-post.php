@@ -3,6 +3,7 @@ function rand_posts()
 {
     $args = array(
         'post_type' => 'post',
+        'posts_per_page' => 4
     );
 
     $the_query = new WP_Query($args);
@@ -45,7 +46,7 @@ function rand_posts()
     <?= get_field('recent_title') ? get_field('recent_title') : 'Our Blog' ?>
   </div>
   <?php echo do_shortcode("[random-posts]"); ?>
-  <a href="<?= $item[ 'link' ] ?>" class="button--secondary">
+  <a href="/blog/" class="button--secondary">
     See More News
   </a>
 </div>

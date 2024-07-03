@@ -6,9 +6,9 @@
 
             <div class="top-screen__left">
                 <div class="top-screen__breadcrumbs">
-                    <span><a href="<?= home_url(); ?>">Homepage</a></span>
+                    <span><a href="<?= home_url(); ?>">Home</a></span>
                     <span> > </span>
-                    <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'About Us' ?></span>
+                    <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Blog' ?></span>
                 </div>
                 <!-- <?php get_template_part('/sections/page-typical/breadcrumbs'); ?> -->
                 <h1>

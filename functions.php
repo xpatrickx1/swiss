@@ -399,3 +399,10 @@ require_once ('functions/searchAutoComplete.php');
 
 require_once ('functions/sharing.php');
 include_once ('functions/post/getFilteredAuthor.php');
+
+
+require_once ('functions/is-subcategory.php');
+require_once ('functions/examples.php');
+require_once ('functions/filterSearchExamples.php');
+require_once ('functions/breadcrumbs.php');
+require_once ('functions/examplesPagination.php');

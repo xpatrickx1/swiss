@@ -2,23 +2,23 @@ const bodyEl = document.querySelector('body');
 const toggle = document.querySelector('.js-hamburger');
 const content = document.querySelector('.header__navigation');
 
-const show = () => {
+const showNav = () => {
     bodyEl.classList.add('is-open');
     bodyEl.classList.add('no-scroll');
 };
 
-const hide = () => {
+const hideNav = () => {
     bodyEl.classList.remove('is-open');
     bodyEl.classList.remove('no-scroll');
 };
 
 toggle.addEventListener('click', event => {
-    bodyEl.classList.contains('is-open') ? hide() : show();
+    bodyEl.classList.contains('is-open') ? hideNav() : showNav();
 });
 
 const handleClosure = event => {
     if (!content.contains(event.target) && !toggle.contains(event.target)) {
-        hide();
+        hideNav();
     }
 };
 
@@ -48,22 +48,25 @@ $(function () {
 });
 
 
-$(window).bind('load', function() {
-    $('.button__discover').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
-            location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top - 75
-                }, 1000);
+function btnScroll (btn, block) {
+    $(window).bind('load', function() {
+        $(btn).click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
+                location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $(block);
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 75
+                    }, 1000);
+                }
             }
-        }
+        });
     });
+}
 
-   
-});
+btnScroll('.button__discover', '.info');
+btnScroll('.button--arrow-up', '.top-screen');
 
 
 jQuery('.header__navigation li').hover(function() {
