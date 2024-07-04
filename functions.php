@@ -386,6 +386,7 @@ function display_google_map($code)
 }
 
 add_shortcode('random-posts', 'rand_posts');
+// add_shortcode('[caf_filter id='67']', 'rand_posts');
 
 
 @ini_set( 'upload_max_size' , '256M' );

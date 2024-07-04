@@ -10,7 +10,6 @@
                     <span> > </span>
                     <span><?= get_field('breadcrumb') ? the_field('breadcrumb') : 'Blog' ?></span>
                 </div>
-                <!-- <?php get_template_part('/sections/page-typical/breadcrumbs'); ?> -->
                 <h1>
                     <?= get_queried_object()->name; ?>
                     <?php

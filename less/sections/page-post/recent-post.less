@@ -13,13 +13,18 @@
         @media ( min-width: @sizes[ minSM ] ) {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             max-width: @sizes[minSM];
             padding: 0;
             margin: 0 auto;
-            gap: 24px 0;
 
             .item {
                 width: 46%;
+
+                @media ( min-width: @sizes[ minLG ] ) {
+                    width: 100%;
+                    max-width: 306px;
+                }
 
                 &__title {
                     text-align: center;
@@ -34,6 +39,11 @@
             &:after, &::before {
                 display: none;
             }
+        }
+
+        @media ( min-width: @sizes[ minLG ] ) {
+            max-width: 100%;
+            flex-wrap: wrap;
         }
     }
 }

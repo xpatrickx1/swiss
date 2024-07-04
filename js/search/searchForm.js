@@ -90,7 +90,8 @@ function showAllSearchResults(index) {
 }
 
 $('.search-field').on('keyup', function() {
-    var input = $(this);
+    console.log(1);
+    let input = jQuery(this);
     if(input.val().length === 0) {
         input.addClass('empty');
     } else {

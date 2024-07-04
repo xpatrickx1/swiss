@@ -1,12 +1,12 @@
 .blog {
-  padding: 48px 0;
+  padding: 48px 0 54px;
 
   @media ( max-width: @sizes[ minSM ] ) {
-    padding: 60px 0;
+    padding: 60px 0 66px;
   }
 
   @media ( min-width: @sizes[ minLG ] ) {
-    padding: 120px 0;
+    padding: 120px 0 84px;
 }
 
   &__wrap {
@@ -239,3 +239,39 @@
     }
   }
 }
+
+.no-result {
+
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 36px;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      gap: 48px;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      gap: 48px;
+    }
+  }
+
+  &__title {
+    .fontZen(500);
+    .fontSize(22px, 28px);
+    text-align: center;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      .fontSize(36px, 40px);
+    }
+  }
+}
+
+
+// .postform {
+//   .level-0 {
+//     display: none;
+//   }
+// }

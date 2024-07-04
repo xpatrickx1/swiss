@@ -43,7 +43,7 @@ function rand_posts()
 
 <div class="recent-post">
   <div class="recent-post__title">
-    <?= get_field('recent_title') ? get_field('recent_title') : 'Our Blog' ?>
+    <?= !is_page_template() ? 'View more news' : 'Our Blog' ?>
   </div>
   <?php echo do_shortcode("[random-posts]"); ?>
   <a href="/blog/" class="button--secondary">

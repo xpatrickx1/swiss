@@ -7,7 +7,9 @@
 
 <section class="blog">
     <div class="container">
+    
         <?php 
+        
           $subcats = get_categories('child_of=' . $catID);
             // foreach($subcats as $subcat) {
                 echo '<div class="blog__wrap">';

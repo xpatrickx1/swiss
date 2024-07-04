@@ -58,6 +58,10 @@
     position: relative;
     height: 200px;
     border-radius: @border[itemRadius];
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      height: 220px;
+    }
   }
 
   .item__img {
@@ -69,6 +73,10 @@
     max-width: 306px;
     left: 50%;
     transform: translateX(-50%);
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      max-width: 350px;
+    }
   }
 
   .item__info {
