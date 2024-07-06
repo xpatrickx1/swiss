@@ -29,10 +29,10 @@ window.addEventListener('focusin', handleClosure);
 $( window ).scroll( scroll, scroll() );
 
 function scroll () {
-    if ( $(window).scrollTop() >= 60 ){
-        $('.header').addClass('header-fixed');
+    if ( jQuery(window).scrollTop() >= 60 ){
+        jQuery('.header').addClass('header-fixed');
     } else {
-        $('.header').removeClass('header-fixed');
+        jQuery('.header').removeClass('header-fixed');
     }
 }
 
@@ -48,8 +48,58 @@ $(function () {
 });
 
 
+let anchors = [];
+const documentURL = document.location.href;
+const pathNameURL = document.location.pathname;
+
+let urlsForCheck = documentURL == 'http://localhost:8080/swiss/'
+    || documentURL == 'https://etudes-modernes.ch/'
+    ;
+
+
+const checkUrls = () => {
+
+    anchors.map( e => {
+
+        if( !urlsForCheck ) {
+            $( '.header__navigation li a[href="' + e + '"]' ).attr( 'href', '/' + e );
+            $( '.footer__menu--terms li a[href="' + e + '"]' ).attr( 'href', '/' + e );
+        }
+    } );
+
+};
+
+
+$('.header__navigation li a').each( function () {
+
+    if  (($( this ).attr( 'href' ) ).match(/^#/i)) {
+        anchors.push( $( this ).attr( 'href' ) );
+    }
+
+}).promise().done( checkUrls() );
+
+$(window).bind('load', function() {
+    $('.header__navigation li a, .footer__menu li a').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
+            location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 75
+                }, 1000);
+            }
+        }
+
+        if( $( 'body' ).hasClass( 'is-open no-scroll' ) ) {
+            $('.js-hamburger').click();
+        }
+    });
+});
+
+
 function btnScroll (btn, block) {
-    $(window).bind('load', function() {
+    jQuery(window).bind('load', function() {
         $(btn).click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
                 location.hostname == this.hostname) {
@@ -66,6 +116,7 @@ function btnScroll (btn, block) {
 }
 
 btnScroll('.button__discover', '.info');
+btnScroll('.button--arrow-up', '.top-screen');
 btnScroll('.button--arrow-up', '.top-screen');
 
 

@@ -407,3 +407,4 @@ require_once ('functions/examples.php');
 require_once ('functions/filterSearchExamples.php');
 require_once ('functions/breadcrumbs.php');
 require_once ('functions/examplesPagination.php');
+

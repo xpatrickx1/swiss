@@ -1,3 +1,6 @@
 //= include plugins/*
-//= include components/header.js
-//= include components/helpers.js
+
+$(document).ready(() => {
+    //= include components/header.js
+    //= include components/helpers.js
+});

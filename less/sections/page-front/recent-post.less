@@ -84,6 +84,7 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    margin: 18px 0 0;
   }
 
   .item__title {
@@ -93,11 +94,38 @@
     margin: 6px 0 12px;
     height: 100%;
     color: @black;
+    text-align: center;
+  }
+
+  .item__cat {
+    display: flex;
+    justify-content: center;
+
+    span {
+      position: relative;
+      .font(600);
+      .fontSize(14px, 20px);
+      color: @buttonMain;
+
+      &:not(:last-child) {
+          &:after {
+            content: '';
+            display: inline-block;
+            right: 0;
+            margin: 2px 8px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: @background[bgColorSecondary];
+            background-position: center;
+          }
+      }
+    }
   }
 
   .item--bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 
@@ -105,6 +133,7 @@
     .font(400);
     color: @color[textSecondary];
     .fontSize(14px, 21px);
+    text-align: center;
   }
 
   .item__views {

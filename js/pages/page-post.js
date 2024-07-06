@@ -4,8 +4,6 @@ $( '.table-content a' ).click(function(e) {
       location.hostname == this.hostname) {
         var target = $(this.hash);
         $(this).addClass('active');
-        console.log( $(this.hash));
-        console.log($(this)[0]);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
             $('html, body').animate({

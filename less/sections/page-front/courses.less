@@ -54,6 +54,30 @@
         margin: 0 9px;
         border-radius: @border[itemRadius];
         overflow: hidden;
+        transition: @transition;
+
+        &:has(.button--secondary:hover) {
+            /*you may replace this with an explicit className, e.g. :has(.child1)*/
+            background: @white;
+            box-shadow: 0px 6px 18px 0px #0000001A;
+
+            .item__title {
+                color: @buttonMain;
+                position: relative;
+                width: fit-content;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background: @buttonMain;
+                    bottom: 0;
+                    left: 0;
+                    transition: @transition;
+                }
+            }
+        }
 
         &__icon {
             height: 160px;
@@ -81,6 +105,7 @@
             .fontSize(20px, 28px);
             color: @black;
             margin: 0 0 12px;
+            transition: @transition;
         }
 
         &__text {
@@ -171,6 +196,10 @@
           @media ( min-width: @sizes[ minSM ] ) {
             max-height: 100%;
           }
+        }
+
+        .slick-list {
+            padding: 0 0 10px;
         }
       
         .slick-slide {

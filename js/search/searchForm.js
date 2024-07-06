@@ -81,6 +81,15 @@ const activateSearch = ( field, index ) => {
     
 };
 
+// $('.blog__search').hide();
+// $('.blog__filter').show();
+
+$('#clearSearch').click( () => {
+    $('.blog__filter').show();
+    $('.blog__search').hide();
+    window.location.href = 'blog';
+});
+
 $( '.search__wrap .search-field' ).each( function( index ) {
     activateSearch( $( '.search__wrap .search-field' ).eq(index), index );
 } );
@@ -89,12 +98,23 @@ function showAllSearchResults(index) {
     $('.search__wrap .btn-submit').eq( index ).click();
 }
 
-$('.search-field').on('keyup', function() {
-    console.log(1);
-    let input = jQuery(this);
-    if(input.val().length === 0) {
-        input.addClass('empty');
-    } else {
-        input.removeClass('empty');
-    }
+$('.search__wrap .btn-submit').click(() => {
+    $('.blog__search').show();
+    $('.blog__filter').hide();
 });
+
+function addEmtyClass() {
+    const inputSearch = $('.search-field');
+    if(inputSearch.val().length === 0) {
+        inputSearch.addClass('empty');
+    } else {
+        inputSearch.removeClass('empty');
+    }
+}
+
+addEmtyClass();
+
+$('.search-field').on('keyup', function() {
+    addEmtyClass();
+});
+

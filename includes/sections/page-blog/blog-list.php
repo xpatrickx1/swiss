@@ -8,6 +8,37 @@
 <section class="blog">
     <div class="container">
     
+    <div class="blog__select">
+        <?php
+        $subcats = get_categories('child_of=' . $catID);
+        $catArr = [];
+        foreach($subcats as $subcat) {
+            echo '<ul>';
+            echo '<li>' . $subcat->cat_name . '</li>';
+            echo '</ul>';
+        } 
+        ?>
+    </div>
+
+    <div class="blog__tabs">
+    <?php 
+$subcats = get_categories('child_of=' . $catID);
+    foreach($subcats as $subcat) {
+        echo '<h3>' . $subcat->cat_name . '</h3>';
+        echo '<ul>';
+            $subcat_posts = get_posts('cat=' . $subcat->cat_ID);
+            foreach($subcat_posts as $subcat_post) {
+                $postID = $subcat_post->ID;
+                    echo '<li>';
+                        echo '<a href="' . get_permalink($postID) . '">';
+                        echo get_the_title($postID);
+                        echo '</a>';
+                    echo '</li>';
+            }
+        echo '</ul>';
+    } 
+?>
+    </div>
         <?php 
         
           $subcats = get_categories('child_of=' . $catID);
@@ -53,3 +84,5 @@
         ?>
     </div>
 </section>
+
+

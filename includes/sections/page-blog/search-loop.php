@@ -9,6 +9,8 @@ while (have_posts()) : the_post(); ?>
         <a href="<?php the_permalink() ?>"><?= wp_trim_words( get_the_title(), 20); ?></a>
     </h2>
 
+    <div class="item__date"><?php get_the_date('F d, Y') ; ?></div>
+
     <div class="item--bottom">
         <div class="item__tags">
             <?php

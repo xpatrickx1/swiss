@@ -1,6 +1,6 @@
 <?php include( 'benefit-data.php' ) ?>
 
-<section class="benefit">
+<section class="benefit" id="advantages">
     <div class="container">
         <div class="benefit__wrap">
 
