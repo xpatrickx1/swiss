@@ -1,9 +1,10 @@
 const activateSearchBlog = ( field, index ) => {
+    
     jQuery(function ($) {
         let customRenderMenu = function (ul, items) {
             var self = this;
             var categoryArr = [];
-    
+            
             function contain(item, array) {
                 var contains = false;
                 $.each(array, function (index, value) {
@@ -81,38 +82,6 @@ const activateSearchBlog = ( field, index ) => {
     
 };
 
-$('.blog__search-res').hide();
-$('.blog__filter').show();
-
-function findGetParameter(parameterName) {
-    var result = null,
-        tmp = [];
-    location.search
-        .substr(1)
-        .split('&')
-        .forEach(function (item) {
-            tmp = item.split('=');
-            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-        });
-    return result;
-}
-
-const searchParams = new URLSearchParams(window.location.search);
-
-if (searchParams.has('s')) {
-    $('.blog__search-res').show();
-    $('.blog__filter').hide();
-}
-
-jQuery('#clearSearch').click( () => {
-    jQuery('.blog__filter').show();
-    jQuery('.blog__search-res').hide();
-    window.location.href = 'blog';
-});
-
-const queryString = window.location.search;
-console.log(queryString);
-
 $( '.search__wrap .search-field' ).each( function( index ) {
     activateSearchBlog( $( '.search__wrap .search-field' ).eq(index), index );
 } );
@@ -127,7 +96,8 @@ $('.search__wrap .btn-submit').click(() => {
 });
 
 function addEmtyClass() {
-    const inputSearch = $('.search-field');
+    const inputSearch = jQuery('.search-field');
+
     if(inputSearch.val().length === 0) {
         inputSearch.addClass('empty');
     } else {
@@ -141,3 +111,18 @@ $('.search-field').on('keyup', function() {
     addEmtyClass();
 });
 
+const searchParams = new URLSearchParams(window.location.search);
+
+$('.blog__search-res').hide();
+$('.blog__filter').show();
+
+if (searchParams.has('s')) {
+    $('.blog__search-res').show();
+    $('.blog__filter').hide();
+}
+
+jQuery('#clearSearch').click( () => {
+    jQuery('.blog__filter').show();
+    jQuery('.blog__search-res').hide();
+    window.location.href = 'blog';
+});

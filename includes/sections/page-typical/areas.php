@@ -3,9 +3,8 @@
 <?php
     if (have_rows('areas_list')):
         while ( have_rows('areas_list')) : the_row();
-            $areas[$highlightsCounter]['title'] = get_sub_field('areas_title');
-            $areas[$highlightsCounter]['text'] = get_sub_field('areas_text');
-            $areas++;
+            $areas[get_row_index() - 1]['title'] = get_sub_field('item_title');
+            $areas[get_row_index() - 1]['text'] = get_sub_field('item_text');
         endwhile;
     endif;
 ?>

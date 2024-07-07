@@ -15,8 +15,8 @@
 <?php
     if (have_rows('highlights_list')):
         while ( have_rows('highlights_list')) : the_row();
-            $highlights[$highlightsCounter]['text'] = get_sub_field('highlights_text');
-            $highlightsCounter++;
+            $highlights[get_row_index() - 1]['title'] = get_sub_field('item_title');
+            $highlights[get_row_index() - 1]['text'] = get_sub_field('item_text');
         endwhile;
     endif;
 ?>
@@ -31,10 +31,11 @@
 
             <div class="highlights__list highlights__list--mob highlights__slider">
                 <?php foreach ( $highlights as $key => $item ) : ?>
-                            <div class="highlights__item item">
-                                <div class="item-title"><?= $item[ 'title' ] ?></div>
-                                <div class="item__text section-subtitle"><?= $item[ 'text' ] ?></div>
-                            </div>
+                    <?php $key++ ?>
+                    <div class="highlights__item item">
+                        <div class="item-title"><?= $item[ 'title' ] ?></div>
+                        <div class="item__text section-subtitle"><?= $item[ 'text' ] ?></div>
+                    </div>
                 <?php endforeach; ?>
             </div>
 

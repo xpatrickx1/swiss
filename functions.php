@@ -23,7 +23,6 @@ function ox_adding_scripts() {
         /*custom js*/
         wp_enqueue_script('validate', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js', array('jquery'), '1.8.1', true);
         wp_enqueue_script('main', get_template_directory_uri() . '/js/min/main.min.js', array('jquery'), time(), true);
-        wp_enqueue_script('selectr', 'https://unpkg.com/mobius1-selectr@2.4.13/dist/selectr.min.js', null, null, true);
 
         /*custom css*/
         wp_enqueue_style( 'main', get_template_directory_uri() . '/css/style.min.css', array(), '1.1.1');
@@ -76,19 +75,6 @@ function ox_adding_scripts() {
             wp_enqueue_style( 'error', get_template_directory_uri() . '/css/page-error.min.css', array(), '1.1.1');
         }
 
-        // For Programs        
-        if ( is_singular('programs') || is_tax( array('sample-category', 'types-category') ) || is_post_type_archive( 'programs' )) {
-            wp_deregister_style('main');
-            wp_dequeue_style('landing');
-            wp_dequeue_script('main');
-            wp_enqueue_style('programs', get_template_directory_uri() . '/css/style-programs.min.css', array(), time(), 'all');
-            wp_enqueue_script('programsjs', get_template_directory_uri() . '/js/min/main-programs.min.js', null, time(), true);
-        }
-
-        if( is_post_type_archive( 'programs' ) ) {
-            wp_enqueue_style('pagePrograms', get_template_directory_uri() . '/css/page-programs.min.css', array(), time(), 'all');
-            wp_enqueue_script('pageProgramsJs', get_template_directory_uri() . '/js/min/page-programs.min.js', null, time(), true);
-        }
     }
 }
 
@@ -101,7 +87,6 @@ $css_files = array(
     'front',
     'main',
     'page-typical',
-    // 'page-blog',
 );
 
 add_action('wp_enqueue_scripts', 'ox_adding_critical_css');

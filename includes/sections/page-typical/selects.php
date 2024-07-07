@@ -3,8 +3,8 @@
 <?php
     if (have_rows('selects_list')):
         while ( have_rows('selects_list')) : the_row();
-            $selects[$get_row_index()]['title'] = get_sub_field('selects_text');
-            $selects[$get_row_index()]['text'] = get_sub_field('selects_text');
+            $selects[get_row_index() - 1]['title'] = get_sub_field('item_title');
+            $selects[get_row_index() - 1]['text'] = get_sub_field('item_text');
             $selectsCounter++;
         endwhile;
     endif;
@@ -15,9 +15,8 @@
         <div class="selects__wrap">
 
             <div class="selects__title">
-                Etudes Modernes SA selects tailor-made programmes for dual education in the Swiss Confederation
+                <?= get_field('highlights_title') ? get_field('highlights_title') : 'Etudes Modernes SA selects tailor-made programmes for dual education in the Swiss Confederation' ?>
             </div>
-            
 
             <div class="selects__list">
                 <?php foreach ( $selects as $key => $item ) : ?>

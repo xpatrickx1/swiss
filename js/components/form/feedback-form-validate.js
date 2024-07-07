@@ -19,7 +19,8 @@ function validatorEmail() {
 *
 */
 
-// validatorEmail();
+
+validatorEmail();
 
 
 /*
@@ -42,46 +43,6 @@ form.$contactForm.validate({
             myEmailCheck: true,
         },
 
-        contactInstructions: {
-            required: true,
-            minlength: 1,
-            maxlength: 8000,
-        },
-        // conditions from [jquery.validate.file.js] lib
-        contactFile: {
-            fileType: {
-                types: [
-                    'image/png',
-                    'image/jpeg',
-                    'application/msword',
-                    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                    'application/vnd.ms-excel',
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    'application/zip',
-                    'application/pdf',
-                    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-                    'application/vnd.ms-powerpoint',
-                    'text/plain',
-                    'application/x-7z-compressed',
-                    'application/x-zip-compressed',
-                    'application/rtf',
-                    'application/vnd.oasis.opendocument.spreadsheet',
-                    'application/vnd.oasis.opendocument.text',
-                    'image/bmp',
-                    'application/vnd.rar'
-                ]
-            },
-            maxFileSize: {
-                'unit': 'B',
-                'size': form.MAX_FILE_SIZE
-            }
-        },
-
-        /*hiddenRecaptcha: {
-            required: function () {
-                return grecaptcha.getResponse() === '';
-            }
-        },*/
     },
     messages: {
         contactEmail: {
@@ -89,15 +50,6 @@ form.$contactForm.validate({
             required: 'Email is required'
         },
 
-        /*phone: {
-            required: 'Phone number is required field.'
-        },*/
-        contactFile: {
-            maxFileSize: 'File must be less than 50MB',
-            fileType: 'Unacceptable file format.',
-            required: 'This field is required'
-        },
-            
     },
     // submit click
     invalidHandler: function (invalidObject, validatorObject) {
@@ -111,9 +63,7 @@ form.$contactForm.validate({
     },
 
     submitHandler: function () {
-        // if (grecaptcha.getResponse() !== '') {
         form.fetchData();
-        // }
     }
 
 });

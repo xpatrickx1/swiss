@@ -1,3 +1,27 @@
+<?php
+
+  $focus = [
+    [
+      'text' => '<strong>Interaction with Leading Sports Federations:</strong> Significant emphasis is placed on interacting with leading sports federations in Switzerland, including football, basketball, and other sports.',
+    ],
+    [
+      'text' => '<strong>Specialized Disciplines:</strong> Alongside their specialized disciplines, students also focus on psychology and communications.',
+    ],
+    [
+      'text' => '<strong>Practical Aspects:</strong> Students explore the practical aspects of athlete transfers and contract negotiations between sports federations in various sports (e.g., fencing, boxing).',
+    ],
+  ];
+
+?>
+
+<?php
+    if (have_rows('focus_list')):
+        while ( have_rows('focus_list')) : the_row();
+            $focus[get_row_index() - 1]['text'] = get_sub_field('focus_item');
+        endwhile;
+    endif;
+?>
+
 
 <section class="focus">
     <div class="container">
@@ -21,9 +45,10 @@
                 </div>
                 <div class="focus__text">
                     <ul>
-                        <li><strong>Interaction with Leading Sports Federations:</strong> Significant emphasis is placed on interacting with leading sports federations in Switzerland, including football, basketball, and other sports.</li>
-                        <li><strong>Specialized Disciplines:</strong> Alongside their specialized disciplines, students also focus on psychology and communications.</li>
-                        <li><strong>Practical Aspects:</strong> Students explore the practical aspects of athlete transfers and contract negotiations between sports federations in various sports (e.g., fencing, boxing).</li>
+                        <?php foreach ( $focus as $key => $item ) : ?>
+                            <?php $key++ ?>
+                            <li><?= $item[ 'text' ] ?></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>

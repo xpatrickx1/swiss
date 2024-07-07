@@ -21,7 +21,7 @@
                             <textarea placeholder="Message" name="contactMassage" id="contact-massage" tabindex="7"></textarea>
                         </fieldset>
                         <fieldset>
-                            <button class="button--main" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                            <button class="button--main" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send</button>
                         </fieldset>
                     </form>
                 </div>

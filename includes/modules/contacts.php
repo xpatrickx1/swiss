@@ -24,9 +24,8 @@
 <?php
     if (have_rows('contacts_social')):
         while ( have_rows('contacts_social')) : the_row();
-            $contacts[get_row_index()]['title'] = get_sub_field('contacts_social_title');
-            $contacts[get_row_index()]['link'] = get_sub_field('contacts_social_link');
-            // $coursesCounter++;
+            $contacts[get_row_index() - 1]['title'] = get_sub_field('item_title');
+            $contacts[get_row_index() - 1]['link'] = get_sub_field('item_link');
         endwhile;
     endif;
 ?>
@@ -44,7 +43,6 @@
                     height="48px" >   
 
                 <a href="<?= 'mailto:office@' . explode( 'www.', get_site_url())[1];?>" class="contacts__email">
-                    <?= file_get_contents(get_theme_file_path("./images/icons/footer-email.svg")); ?>
                     <span><?= 'office@' . explode( 'www.', get_site_url())[1];?></span>
                 </a>
             </div>
