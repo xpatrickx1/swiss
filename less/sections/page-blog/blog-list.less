@@ -3,11 +3,11 @@
   // display: none;
 
   @media ( max-width: @sizes[ minSM ] ) {
-    padding: 60px 0 66px;
+    padding: 34px 0 66px;
   }
 
   @media ( min-width: @sizes[ minLG ] ) {
-    padding: 120px 0 84px;
+    padding: 50px 0 84px;
 }
 
   // &__wrap {
@@ -25,7 +25,19 @@
 
   // }
 
-  &__search {
+  &__wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-res {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .search-res__wrap {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 24px;
@@ -76,15 +88,44 @@
     overflow: hidden;
   }
 
-  .item-title {
-    text-align: center;
+  .item__cat {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0 0;
+
+    span {
+      position: relative;
+      &:not(:last-child) {
+        &:after {
+          content: '';
+          display: inline-block;
+          right: 0;
+          margin: 2px 8px;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: @background[bgColorSecondary];
+          background-position: center;
+        }
+    }
+
+      a {
+        background-color: transparent;
+        text-transform: none;
+        position: relative;
+        margin: 0;
+        .font(600);
+        .fontSize(14px, 20px);
+        color: @buttonMain;
+      }
+    }
+
   }
 
   .item__date {
     .fontSize(14px, 20px);
       color: @color[textSecondary];
       text-align: center;
-      margin: 12px 0 0;
   }
   
 
@@ -102,6 +143,7 @@
     margin: 6px 0 12px;
     height: 100%;
     color: @black;
+    text-align: center;
   }
 
   .item--bottom {
@@ -294,17 +336,50 @@
 }
 
 
-// .postform {
-//   .level-0 {
-//     display: none;
-//   }
-// }
+
 #caf-post-layout-container {
   .caf-featured-img-box {
     height: 220px;
     background-repeat: no-repeat;
   }
-  
+
+ 
+  .caf-meta-content-cats {
+    ul {
+      display: flex;
+      justify-content: center;
+      margin: 18px 0 0;
+    }
+
+    li {
+      position: relative;
+      &:not(:last-child) {
+        &:after {
+          content: '';
+          display: inline-block;
+          right: 0;
+          margin: 2px 8px;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: @background[bgColorSecondary];
+          background-position: center;
+        }
+    }
+
+      a {
+        background-color: transparent;
+        text-transform: none;
+        position: relative;
+        margin: 0;
+        .font(600);
+        .fontSize(14px, 20px);
+        color: @buttonMain;
+      }
+    }
+
+  }
+
   .author, .comment, .caf-read-more, .caf-post-layout1 .caf-content, .fa-calendar {
     display: none;
   }
@@ -323,6 +398,111 @@
 
   .date {
     padding: 0;
+    text-align: center;
+    .font(400);
+    color: @color[textSecondary];
+    .fontSize(14px, 21px);
+  }
+
+    #caf-filter-layout2 ul.dropdown {
+      display: flex;
+      justify-content: center;
+
+      span {
+        .fontZen(500);
+        .fontSize(22px, 28px);
+    
+        @media ( min-width: @sizes[ minSM ] ) {
+          .fontSize(36px, 40px);
+        }
+      }
+      
+      li {
+
+      ul {
+        box-shadow: none;
+        background: transparent;
+        right: 0;
+        left: 191px;
+
+        @media ( min-width: @sizes[ minSM ] ) {
+          left: 245px;
+        }
+      }
+
+      a {
+        .fontZen(500);
+        .fontSize(22px, 28px);
+        color: @color[textSecondary];
+    
+        @media ( min-width: @sizes[ minSM ] ) {
+          .fontSize(36px, 40px);
+        }
+
+        &.active {
+          background-color: transparent;
+          color: @accent;
+        }
+      }
+
+        .result {
+        color: @accent;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+
+        &::after {
+          content: '';
+          position: relative;
+          display: inline-block;
+          background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.166992 0.5H11.8337L6.58949 5.74417C6.43322 5.90039 6.2213 5.98816 6.00033 5.98816C5.77936 5.98816 5.56743 5.90039 5.41116 5.74417L0.166992 0.5Z' fill='%238BC53F'/%3E%3C/svg%3E%0A");
+          background-repeat: no-repeat;
+          width: 12px;
+          height: 6px;
+          margin-left: 10px;
+          background-position: center;
+        }
+      }
+    }
+}
+  .init{
+    width: fit-content;
+    min-width: 380px;
+
+    &.activss {
+    position: relative;
+    z-index: 2;
+
+    span {
+      position: relative;
+      z-index: 3;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: #F2F2EDD6;
+      bottom: 0;
+      right: 0;
+      width: 150vw;
+      height: 150vh;
+      top: -50vh;
+      left: -50vw;
+      z-index: 2;
+    }
+  }
+}
+
+  .caf-post-title {
+    h2, a {
+      color: @black;
+      text-align: center;
+  
+      &:hover {
+        color: @buttonMain;
+        text-decoration: underline;
+      }
+    }
   }
 
   #caf-layout-pagination {
@@ -331,7 +511,7 @@
 
     .page-numbers {
       border-radius: 18px;
-      padding: 15px 20px;
+      padding: 12px 18.5px;
       width: 48px;
       height: 48px;
       text-align: center;
@@ -341,18 +521,21 @@
 
       &.current {
         background-color: #32560F;
+        color: @white;
       }
 
       @media (min-width: @sizes[minLG]) {
         &:hover {
           background-color: #32560F;
           border: 1px solid #32560F;
+          color: @white;
         }
       }
 
       &:active, &:focus {
         background-color: #8BC53F;
         border: 1px solid #8BC53F;
+        color: @black;
       }
 
       &.next, &.prev {
@@ -395,8 +578,34 @@
       }
     }
 
+    .post-layout1 li a {
+      margin-right: 8px;
+    }
+
     
   }
 
   
+  
+}
+
+#manage-ajax-response {
+  article {
+    max-width: 100%;
+    flex: 0 0 100%;
+
+    @media ( min-width: @sizes[ minSM ] ) {
+      max-width: 48%;
+      flex: 0 0 48%;
+    }
+
+    @media ( min-width: @sizes[ minLG ] ) {
+      max-width: 24%;
+    }
+  }
+
+}
+
+body.activss {
+  overflow: hidden;
 }

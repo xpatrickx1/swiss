@@ -5,21 +5,8 @@
       "name": "front"
     },
     {
-      "link": "/about/",
-      "name": "about"
-    },
-    {
-      "link": "/contacts/",
-      "name": "contacts"
-    },
-    
-    {
-      "link": "/news/",
-      "name": "news"
-    },
-    {
-      "link": "/projects/",
-      "name": "projects"
+      "link": "/typical/",
+      "name": "typical"
     }
   ]
 }

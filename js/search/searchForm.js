@@ -1,4 +1,4 @@
-const activateSearch = ( field, index ) => {
+const activateSearchBlog = ( field, index ) => {
     jQuery(function ($) {
         let customRenderMenu = function (ul, items) {
             var self = this;
@@ -81,17 +81,40 @@ const activateSearch = ( field, index ) => {
     
 };
 
-// $('.blog__search').hide();
-// $('.blog__filter').show();
+$('.blog__search-res').hide();
+$('.blog__filter').show();
 
-$('#clearSearch').click( () => {
-    $('.blog__filter').show();
-    $('.blog__search').hide();
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split('&')
+        .forEach(function (item) {
+            tmp = item.split('=');
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+
+const searchParams = new URLSearchParams(window.location.search);
+
+if (searchParams.has('s')) {
+    $('.blog__search-res').show();
+    $('.blog__filter').hide();
+}
+
+jQuery('#clearSearch').click( () => {
+    jQuery('.blog__filter').show();
+    jQuery('.blog__search-res').hide();
     window.location.href = 'blog';
 });
 
+const queryString = window.location.search;
+console.log(queryString);
+
 $( '.search__wrap .search-field' ).each( function( index ) {
-    activateSearch( $( '.search__wrap .search-field' ).eq(index), index );
+    activateSearchBlog( $( '.search__wrap .search-field' ).eq(index), index );
 } );
 
 function showAllSearchResults(index) {

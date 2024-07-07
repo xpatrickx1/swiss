@@ -8,13 +8,15 @@ if (have_posts()) : ?>
 <section class="blog">
     <div class="container">
         <div class="blog__wrap">
-              <div class="blog__search">
-                <?php get_template_part( 'includes/sections/page-blog/search-loop' ); ?>
+              <div class="blog__search-res search-res">
+                <div class="search-res__wrap">
+                  <?php get_template_part( 'includes/sections/page-blog/search-loop' ); ?>
+                </div>
                 <div id="clearSearch" class="button--secondary">Clear Search</div>
               </div>
-              <!-- <div class="blog__filter">
-                < ? php echo do_shortcode('[caf_filter id="67"]'); ?>
-              </div> -->
+              <div class="blog__filter">
+                <?php echo do_shortcode('[caf_filter id="67"]'); ?>
+              </div>
         </div>
     </div>
 </section>

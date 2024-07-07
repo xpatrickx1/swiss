@@ -7,12 +7,25 @@
                 <div class="form__title">
                     Get an application form
                 </div>
-                <form action="">
-                    <input type="text">
-                    <input type="text">
-                    <input type="message">
-                    <button class="button--main">Send</button>
-                </form>
+                <div class="contact-form__right front-form__wrap">
+                    <form method="POST"
+                        id="contact-form"
+                        enctype="multipart/form-data">
+                        <fieldset>
+                            <input placeholder="Name" name="contactName" id="contact-name" type="text" tabindex="1" >
+                        </fieldset>
+                        <fieldset>
+                            <input placeholder="Email" name="contactEmail" id="contact-email" type="email" tabindex="2" required>
+                        </fieldset>
+                        <fieldset>
+                            <textarea placeholder="Message" name="contactMassage" id="contact-massage" tabindex="7"></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <button class="button--main" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                        </fieldset>
+                    </form>
+                </div>
+
                 
             </div>
 

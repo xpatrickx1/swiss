@@ -1,29 +1,41 @@
 <?php 
-while (have_posts()) : the_post(); ?>
+while (have_posts()) : the_post();
 
-<div class="blog__item" id="post-<?php the_ID(); ?>">
+    $catArr = [];
+    $postID = get_the_id();
+    $categories = get_the_category();
+    $subcats = get_categories('child_of=' . $catID);
+    $catID = $categories[0]->cat_ID;
+    $postThumbnail = get_the_post_thumbnail($postID, array(), array("class" => "item__img"));
+    $postThumbnailPlaceholder = '<img src="' . get_bloginfo('template_url') . '/images/loader.gif' . '" data-src="' . get_bloginfo('template_url') . '/images/features/blog.jpg' . '"  class="lazy item__img">';
+    $postThumb = $postThumbnail ? $postThumbnail : $postThumbnailPlaceholder ;
+    foreach($subcats as $subcat) {
+        $subcat_posts = get_posts('cat=' . $subcat->cat_ID);
+        foreach($subcat_posts as $subcat_post) {
+            $postIDS = $subcat_post->ID;
+            if ($subcat_post->ID == $postID) {
+                array_push($catArr, $subcat->cat_name);
+                break;
+            }
+        }
+    }
 
-    <a href="<?php the_permalink(); ?>" class="item__img" style="background-image: url(<?= has_post_thumbnail() ? get_the_post_thumbnail_url() : bloginfo('template_url') . '/images/features/blog.jpg' ?>)"></a>
+    $string .= '
+    <div class="blog__item" id="post-' .$postID . '">
 
-    <h2 class="item__title">
-        <a href="<?php the_permalink() ?>"><?= wp_trim_words( get_the_title(), 20); ?></a>
-    </h2>
+        <div class="recent-post__thumbnail">' . $postThumb . '</div>
 
-    <div class="item__date"><?php get_the_date('F d, Y') ; ?></div>
+        <div class="item__cat"><span>' . implode("</span><span>",$catArr) . '<span></div>
 
-    <div class="item--bottom">
-        <div class="item__tags">
-            <?php
-                $postcat = get_the_terms($post->ID, 'blog');
-                foreach ($postcat as $cat) {
-                    if ($cat->parent != 0) {
-                        echo "<a href='" . get_category_link($cat->term_id) . "' class='tag__item' >" . $cat->name . "</a>";
-                    }
-                }
-            ?>
-        </div>
-    </div>
-</div>
+        <h2 class="item__title">
+            <a href="' . get_permalink() . '" class="item__title">' . get_the_title() . '</a>
+        </h2>
+
+        <div class="item__date">' . get_the_date('F d, Y') . '</div>
+    </div>';
+
+  echo $string;
+?>
 
 <?php endwhile;
 

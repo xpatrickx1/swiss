@@ -16,12 +16,14 @@ function ox_adding_scripts() {
 
         /*jquery*/
         wp_deregister_script('jquery');
-        wp_enqueue_script('jquery', get_template_directory_uri() . '/js/min/jquery.min.js', null, '3.2.1', true);
+        wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.5.1.min.js', null, '3.5.1', true);
 
         //общие для всего сайта стили и скрипты
 
         /*custom js*/
-        wp_enqueue_script('main', get_template_directory_uri() . '/js/min/main.min.js', array('jquery'), '1.3', true );
+        wp_enqueue_script('validate', 'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js', array('jquery'), '1.8.1', true);
+        wp_enqueue_script('main', get_template_directory_uri() . '/js/min/main.min.js', array('jquery'), time(), true);
+        wp_enqueue_script('selectr', 'https://unpkg.com/mobius1-selectr@2.4.13/dist/selectr.min.js', null, null, true);
 
         /*custom css*/
         wp_enqueue_style( 'main', get_template_directory_uri() . '/css/style.min.css', array(), '1.1.1');
@@ -394,7 +396,6 @@ add_shortcode('random-posts', 'rand_posts');
 @ini_set( 'max_execution_time', '300' );
 
 
-require_once ('functions/filterSearchExamples.php');
 require_once ('functions/search.php');
 require_once ('functions/searchAutoComplete.php');
 
@@ -402,9 +403,4 @@ require_once ('functions/sharing.php');
 include_once ('functions/post/getFilteredAuthor.php');
 
 
-require_once ('functions/is-subcategory.php');
-require_once ('functions/examples.php');
-require_once ('functions/filterSearchExamples.php');
-require_once ('functions/breadcrumbs.php');
-require_once ('functions/examplesPagination.php');
 

@@ -118,13 +118,30 @@
         }
     }
 
-    input {
+    input, textarea {
         background: @white;
         color: @color[textSecondary];
         border-radius: @border[buttonRadius];
         border: 1px solid @border[borderPrimary];
         padding: 14px 24px;
+        width: 100%;
+        .font(400);
+        .fontSize(16px, 20px);
     }
+
+    textarea {
+        height: 88px;
+        .font(400);
+        .fontSize(16px, 20px);
+    }
+
+    fieldset {
+        border: medium none;
+        margin: 0 ;
+        min-width: 100%;
+        padding: 0;
+        width: 100%;
+      }
 
     .button--main {
         margin: 24px auto 0;
@@ -137,7 +154,7 @@
         }
 
         @media ( min-width: @sizes[ minLG ] ) {
-            margin: 56px 0 0;
+            margin: 44px 0 0;
         }
     }
 
