@@ -5,7 +5,7 @@
 
             <div class="quote__top">
                 <picture class="lazy">
-                    <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/man.png' ?>" >
+                    <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/man.webp' ?>" >
                     <img 
                         src="<?php bloginfo('template_url'); ?>/images/loader.gif"
                         width="148"

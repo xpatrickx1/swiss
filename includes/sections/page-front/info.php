@@ -5,9 +5,9 @@
 
             <div class="info__top">
                 <picture class="lazy">
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info-mob.png' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-mob-2x.png' ?> 2x" media="(max-width: 767px)"> -->
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info-tab.png' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-tab-2x.png' ?> 2x" media="(min-width: 768px) and (max-width: 1023px)"> -->
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info.png' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-2x.png' ?> 2x" >
+                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info-mob.webp' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-mob-2x.webp' ?> 2x" media="(max-width: 767px)"> -->
+                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info-tab.webp' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-tab-2x.webp' ?> 2x" media="(min-width: 768px) and (max-width: 1023px)"> -->
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info.webp' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-2x.webp' ?> 2x" >
                 <img 
                     src="<?php bloginfo('template_url'); ?>/images/loader.gif"
                     width="636"

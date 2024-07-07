@@ -29,7 +29,7 @@
 
             <div class="focus__top">
                 <picture class="lazy">
-                    <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/focus.png' ?>" >
+                    <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/focus.webp' ?>" >
                     <img 
                         src="<?php bloginfo('template_url'); ?>/images/loader.gif"
                         width="636"

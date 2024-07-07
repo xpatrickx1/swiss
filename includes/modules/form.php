@@ -32,7 +32,7 @@
             <div class="form__bottom">
                 <img 
                     src="<?= bloginfo('template_url') . '/images/loader.gif' ?>" 
-                    data-src="<?= bloginfo('template_url') . '/images/page-front/form.png' ?>"
+                    data-src="<?= bloginfo('template_url') . '/images/page-front/form.webp' ?>"
                     class="lazy item__rating-img"
                     width="636"
                     height="420"

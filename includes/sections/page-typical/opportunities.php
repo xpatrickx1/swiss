@@ -5,9 +5,9 @@
 
             <div class="opportunities__top">
                 <picture class="lazy">
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities.png' ?>" media="(max-width: 767px)">
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities-tab.png' ?>" media="(min-width: 768px) and (max-width: 1023px)">
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities-desk.png' ?>" >
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities.webp' ?>" media="(max-width: 767px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities-tab.webp' ?>" media="(min-width: 768px) and (max-width: 1023px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/opportunities-desk.webp' ?>" >
                 <img 
                     src="<?php bloginfo('template_url'); ?>/images/loader.gif"
                     width="636"

@@ -23,7 +23,7 @@
             <div class="courses__item item">
 
                 <div class="item__icon">
-                    <img src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.png'  ?>" data-src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.png'  ?>" class="" >
+                    <img src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.webp'  ?>" data-src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.webp'  ?>" class="" >
                 </div>
 
                 <div class="item__bottom">

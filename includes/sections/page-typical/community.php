@@ -5,9 +5,9 @@
 
             <div class="community__top">
                 <picture class="lazy">
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community.png' ?>" media="(max-width: 767px)">
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community-tab.png' ?>" media="(min-width: 768px) and (max-width: 1023px)">
-                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community-desk.png' ?>" >
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community.webp' ?>" media="(max-width: 767px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community-tab.webp' ?>" media="(min-width: 768px) and (max-width: 1023px)">
+                <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/community-desk.webp' ?>" >
                 <img 
                     src="<?php bloginfo('template_url'); ?>/images/loader.gif"
                     width="636"

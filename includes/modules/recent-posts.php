@@ -15,7 +15,7 @@
             <a href="<?php echo get_permalink($p['ID']) ?>" class="article-preview__thumbnail-wrp">
                 <?php
                     $postThumbnail = get_the_post_thumbnail($p['ID'], array(), array("class" => "article-preview__thumbnail"));
-                    $postThumbnailPlaceholder = '<img src="' . get_bloginfo('template_url') . '/images/blog-thumbnail.png' . '" alt="" class="article-preview__thumbnail">';
+                    $postThumbnailPlaceholder = '<img src="' . get_bloginfo('template_url') . '/images/blog-thumbnail.webp' . '" alt="" class="article-preview__thumbnail">';
                     echo $postThumbnail ? $postThumbnail : $postThumbnailPlaceholder ;
                  ?>
             </a>
