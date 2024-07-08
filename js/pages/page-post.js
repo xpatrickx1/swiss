@@ -22,7 +22,7 @@ window.onscroll = () => {
     
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop + 200) {
+        if (scrollY >= sectionTop + 100) {
             current = section.getAttribute('id'); }
     });
 
@@ -31,7 +31,24 @@ window.onscroll = () => {
     });
 
     current.length && document.querySelector('.table-content__list a[href*=' + current + ']').classList.add('active');
+
+    moveMenuLine(document.querySelector('.table-content__link.active'));
 };
+
+
+function moveMenuLine(event) {
+    const menu = document.querySelector('.table-content__list');
+    if(event) {
+        menu.style.setProperty(
+            '--underline-height',
+            `${event.offsetHeight}px`
+        );
+        menu.style.setProperty(
+            '--underline-offset-y',
+            `${event.offsetTop}px`
+        );
+    }
+}
 
 
 $('.recent-post__slider')

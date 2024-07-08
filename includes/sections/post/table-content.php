@@ -26,7 +26,7 @@ function create_toc($html) {
                   $h2_status = 1;
                   $itemTitle = $element->textContent;
                   $itemLink = str_replace( " ", "-", $itemTitle );
-                  $toc .= '<li class="table-content__item"><a href="' . get_the_permalink() . '#' . $itemLink . '">' . $element->textContent . '</a>';
+                  $toc .= '<li class="table-content__item"><a href="' . get_the_permalink() . '#' . $itemLink . '" class="table-content__link">' . $element->textContent . '</a>';
                   $element->setAttribute('id', $itemLink);
                   $i++;
             }
@@ -34,7 +34,7 @@ function create_toc($html) {
         if($h2_status){
             $toc .= '</li>';
         }
-        $toc .= '</ul></div>';
+        $toc .= '</ul><a href="#" class="button--arrow-up button--desktop">Scroll Up</a></div>';
         $html = $dom->saveHTML();
     }
     return $toc . $html;

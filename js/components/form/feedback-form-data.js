@@ -39,7 +39,7 @@ let form = {
     freezeOnSubmit: function () {
 
         form.contactSubmit.setAttribute('disabled', true);
-        form.contactSubmit.textContent = 'Sending... Please, wait';
+        form.contactSubmit.textContent = 'Sending...';
         document.body.classList.add('modal');
 
     },
@@ -129,12 +129,12 @@ let form = {
                     // text-data promise - check for server feedback message
                         .then(function (serverMessage) {
                             // on success response
-                            if (serverMessage === form.responseTextSuccess) {
-                                form.onFormSentOverlay(form.overlayIconSuccessImageSrc, form.overlayTitleSuccessText, form.overlaySubtitleSuccessText);
-                                // on error response
-                            } else {
-                                form.onFormSentOverlay(form.overlayIconErrorImageSrc, form.overlayTitleErrorText, form.overlaySubtitleErrorText);
-                            }
+                            // if (serverMessage === form.responseTextSuccess) {
+                            //     form.onFormSentOverlay(form.overlayIconSuccessImageSrc, form.overlayTitleSuccessText, form.overlaySubtitleSuccessText);
+                            //     // on error response
+                            // } else {
+                            //     form.onFormSentOverlay(form.overlayIconErrorImageSrc, form.overlayTitleErrorText, form.overlaySubtitleErrorText);
+                            // }
                         });
                 }
             })

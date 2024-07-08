@@ -29,10 +29,10 @@ window.addEventListener('focusin', handleClosure);
 $( window ).scroll( scroll, scroll() );
 
 function scroll () {
-    if ( jQuery(window).scrollTop() >= 60 ){
-        jQuery('.header').addClass('header-fixed');
+    if ( $(window).scrollTop() >= 60 ){
+        $('.header').addClass('header-fixed');
     } else {
-        jQuery('.header').removeClass('header-fixed');
+        $('.header').removeClass('header-fixed');
     }
 }
 
@@ -53,6 +53,7 @@ const documentURL = document.location.href;
 const pathNameURL = document.location.pathname;
 
 let urlsForCheck = documentURL == 'http://localhost:8080/swiss/'
+    || documentURL == 'http://localhost/swiss/'
     || documentURL == 'https://etudes-modernes.ch/'
     ;
 
@@ -62,8 +63,10 @@ const checkUrls = () => {
     anchors.map( e => {
 
         if( !urlsForCheck ) {
-            $( '.header__navigation li a[href="' + e + '"]' ).attr( 'href', '/' + e );
-            $( '.footer__menu--terms li a[href="' + e + '"]' ).attr( 'href', '/' + e );
+            if (!($('.header__navigation li:has(ul)'))) {
+                $( '.header__navigation li a[href="' + e + '"]' ).attr( 'href', '/' + e );
+                $( '.footer__menu--terms li a[href="' + e + '"]' ).attr( 'href', '/' + e );
+            }
         }
     } );
 
@@ -80,6 +83,7 @@ $('.header__navigation li a').each( function () {
 
 $(window).bind('load', function() {
     $('.header__navigation li a, .footer__menu li a').click(function() {
+        // if (!($('.header__navigation li:has(ul)'))) {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
             location.hostname == this.hostname) {
             var target = $(this.hash);
@@ -94,12 +98,13 @@ $(window).bind('load', function() {
         if( $( 'body' ).hasClass( 'is-open no-scroll' ) ) {
             $('.js-hamburger').click();
         }
+        // }
     });
 });
 
 
 function btnScroll (btn, block) {
-    jQuery(window).bind('load', function() {
+    $(window).bind('load', function() {
         $(btn).click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
                 location.hostname == this.hostname) {
@@ -119,9 +124,9 @@ btnScroll('.button__discover', '.info');
 btnScroll('.button--arrow-up', '.top-screen');
 btnScroll('.button--arrow-up', '.top-screen');
 
-
-jQuery('.header__navigation li').hover(function() {
-    jQuery(this).find('ul').stop(true, true).slideDown({
+console.log(1);
+$('.header__navigation li:has(ul)').hover(function(e) {
+    $(this).find('ul').stop(true, true).slideDown({
         start: function () {
             $(this).css({
                 display: 'flex'
@@ -129,10 +134,11 @@ jQuery('.header__navigation li').hover(function() {
         }
     });
 }, function() {
-    jQuery(this).find('ul').stop(true, true).slideUp();
+    $(this).find('ul').stop(true, true).slideUp();
 });
-
 
 if ($('.header__navigation li:has(ul)')) {
     $('.header__navigation li:has(ul)').addClass('has-children');
 }
+
+

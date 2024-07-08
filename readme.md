@@ -14,7 +14,7 @@
 `sudo npm install gulp -g`
 
 
-http://localhost:8888/sfera
+http://localhost:8888/swiss
 
 
 ### Инструкция
