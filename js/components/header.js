@@ -83,7 +83,6 @@ $('.header__navigation li a').each( function () {
 
 $(window).bind('load', function() {
     $('.header__navigation li a, .footer__menu li a').click(function() {
-        // if (!($('.header__navigation li:has(ul)'))) {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
             location.hostname == this.hostname) {
             var target = $(this.hash);
@@ -98,7 +97,6 @@ $(window).bind('load', function() {
         if( $( 'body' ).hasClass( 'is-open no-scroll' ) ) {
             $('.js-hamburger').click();
         }
-        // }
     });
 });
 
@@ -122,10 +120,8 @@ function btnScroll (btn, block) {
 
 btnScroll('.button__discover', '.info');
 btnScroll('.button--arrow-up', '.top-screen');
-btnScroll('.button--arrow-up', '.top-screen');
 
-console.log(1);
-$('.header__navigation li:has(ul)').hover(function(e) {
+$('li:has(ul)').hover(function(e) {
     $(this).find('ul').stop(true, true).slideDown({
         start: function () {
             $(this).css({
@@ -137,8 +133,21 @@ $('.header__navigation li:has(ul)').hover(function(e) {
     $(this).find('ul').stop(true, true).slideUp();
 });
 
-if ($('.header__navigation li:has(ul)')) {
-    $('.header__navigation li:has(ul)').addClass('has-children');
+if ($('li:has(ul)')) {
+    $('li:has(ul)').addClass('has-children');
 }
+
+$('.languages__btn').hover(function(e) {
+    console.log($(this).parent());
+    $(this).parent().find('#languages-widget ul').stop(true, true).slideDown({
+        start: function () {
+            $(this).css({
+                display: 'flex'
+            });
+        }
+    });
+}, function() {
+    $(this).find('ul').stop(true, true).slideUp();
+});
 
 

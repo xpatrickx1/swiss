@@ -19,7 +19,7 @@
     right: 0;
     width: 156px;
     height: 200px;
-    background-image: url( '../images/icons/footer.webp' );
+    background-image: url( '../images/icons/footer.png' );
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
@@ -93,6 +93,24 @@
       line-height: 24px;
       display: block;
       width: auto;
+      transition: @transition;
+      text-decoration: none;
+
+      @media ( min-width: @sizes[ minSM ] ) {
+        &:hover,
+        &:active {
+          color: @color[ menuLinksHover ];
+          text-decoration: none;
+
+          @media ( max-width: @sizes[ maxMD ] ) {
+            color: @color[ mobileMenuLinksActive ];
+          }
+        }
+      }
+
+      &.active {
+          color: @color[textSecondary];
+      }
     }
   }
 }

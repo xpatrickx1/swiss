@@ -129,6 +129,10 @@
         .fontSize(16px, 20px);
     }
 
+    p {
+        margin: 0;
+    }
+
     textarea {
         height: 88px;
         .font(400);
@@ -143,7 +147,11 @@
         width: 100%;
       }
 
-    .button--main {
+    input[type="submit"] {
+        .buttonMain(180px);
+    }
+
+    .button--main, input[type="submit"] {
         margin: 24px auto 0;
         max-width: 180px;
         height: 48px;
@@ -157,5 +165,7 @@
             margin: 44px 0 0;
         }
     }
+
+    
 
 }

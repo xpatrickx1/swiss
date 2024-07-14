@@ -389,3 +389,14 @@ include_once ('functions/post/getFilteredAuthor.php');
 
 
 
+function languages_widgets_init() {
+    register_sidebar( array(
+      'name' => 'Header languages switcher',
+      'id' => 'header_languages',
+      'before_widget' => '<div id="languages-widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h2>',
+      'after_title' => '</h2>', ) );
+  }
+  add_action( 'widgets_init', 'languages_widgets_init' );
+

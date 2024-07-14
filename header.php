@@ -46,8 +46,16 @@
             </ul>
             
             
+
             <div class="header__buttons">
+
+                <div class="header__languages languages">
+                    <div class="languages__btn"></div>
+                    <?php if ( function_exists('dynamic_sidebar')) { dynamic_sidebar('header_languages'); } ?>
+                </div>
+
                 <a href="#" class="button--main">Contact Us</a>
+                
             </div>
 
             <div class="header__hamburger js-hamburger">
