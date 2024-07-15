@@ -42,8 +42,8 @@
                     width="48px"
                     height="48px" >   
 
-                <a href="<?= 'mailto:office@' . explode( 'www.', get_site_url())[1];?>" class="contacts__email">
-                    <span><?= 'office@' . explode( 'www.', get_site_url())[1];?></span>
+                <a href="<?= 'mailto:office@' . get_site_url();?>" class="contacts__email">
+                    <span><?= 'office@' . get_site_url();?></span>
                 </a>
             </div>
             
