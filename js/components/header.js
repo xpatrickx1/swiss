@@ -1,29 +1,7 @@
-const bodyEl = document.querySelector('body');
-const toggle = document.querySelector('.js-hamburger');
-const content = document.querySelector('.header__navigation');
-
-const showNav = () => {
-    bodyEl.classList.add('is-open');
-    bodyEl.classList.add('no-scroll');
-};
-
-const hideNav = () => {
-    bodyEl.classList.remove('is-open');
-    bodyEl.classList.remove('no-scroll');
-};
-
-toggle.addEventListener('click', event => {
-    bodyEl.classList.contains('is-open') ? hideNav() : showNav();
+$('.js-hamburger').click(() => {
+    $('body').toggleClass('is-open');
+    $('body').toggleClass('no-scroll');
 });
-
-const handleClosure = event => {
-    if (!content.contains(event.target) && !toggle.contains(event.target)) {
-        hideNav();
-    }
-};
-
-window.addEventListener('click', handleClosure);
-window.addEventListener('focusin', handleClosure);
 
 
 $( window ).scroll( scroll, scroll() );
@@ -121,7 +99,7 @@ function btnScroll (btn, block) {
 btnScroll('.button__discover', '.info');
 btnScroll('.button--arrow-up', '.top-screen');
 
-$('li:has(ul)').hover(function(e) {
+$('.navigation li:has(ul)').hover(function(e) {
     $(this).find('ul').stop(true, true).slideDown({
         start: function () {
             $(this).css({
@@ -133,21 +111,17 @@ $('li:has(ul)').hover(function(e) {
     $(this).find('ul').stop(true, true).slideUp();
 });
 
-if ($('li:has(ul)')) {
-    $('li:has(ul)').addClass('has-children');
+if ($('.navigation li:has(ul)')) {
+    $('.navigation li:has(ul)').addClass('has-children');
 }
 
-$('.languages__btn').hover(function(e) {
-    console.log($(this).parent());
-    $(this).parent().find('#languages-widget ul').stop(true, true).slideDown({
+$('.languages__btn').click(function(e) {
+    $('#languages-widget').slideToggle({
         start: function () {
             $(this).css({
                 display: 'flex'
             });
         }
     });
-}, function() {
-    $(this).find('ul').stop(true, true).slideUp();
 });
-
 
