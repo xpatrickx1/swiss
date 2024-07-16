@@ -98,6 +98,7 @@ function btnScroll (btn, block) {
 
 btnScroll('.button__discover', '.info');
 btnScroll('.button--arrow-up', '.top-screen');
+btnScroll('.header__buttons .button--main', '.form');
 
 $('.navigation li:has(ul)').hover(function(e) {
     $(this).find('ul').stop(true, true).slideDown({
