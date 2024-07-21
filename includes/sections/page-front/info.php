@@ -1,12 +1,13 @@
-
+<?php
+    $infoText = '<p>Studying is based on the principals of the dual form of education in accordance with the recommendations of experts in science and business.</p>
+                <p>Etudes Modernes SA, in collaboration with international universities, will be pleased to provide you with a personalized approach based on your abilities and goals for undergraduate, graduate and doctoral studies.</p>'
+?>
 <section class="info">
     <div class="container">
         <div class="info__wrap">
 
             <div class="info__top">
                 <picture class="lazy">
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info-mob.webp' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-mob-2x.webp' ?> 2x" media="(max-width: 767px)"> -->
-                <!-- <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info-tab.webp' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-tab-2x.webp' ?> 2x" media="(min-width: 768px) and (max-width: 1023px)"> -->
                 <source data-srcset="<?= bloginfo('template_url') . '/images/page-front/info/info.webp' ?>, <?= bloginfo('template_url') . '/images/page-front/info/info-2x.webp' ?> 2x" >
                 <img 
                     src="<?php bloginfo('template_url'); ?>/images/loader.gif"
@@ -19,11 +20,10 @@
 
             <div class="info__bottom">
                 <div class="info__title">
-                    Etudes Modernes
+                    <?= get_field('info_title') ? get_field('info_title') : 'Etudes Modernes' ?>
                 </div>
                 <div class="info__text">
-                    <p>Studying is based on the principals of the dual form of education in accordance with the recommendations of experts in science and business.</p>
-                    <p>Etudes Modernes SA, in collaboration with international universities, will be pleased to provide you with a personalized approach based on your abilities and goals for undergraduate, graduate and doctoral studies.</p>
+                    <?= get_field('info_text') ? get_field('info_text') : $infoText ?>
                 </div>
             </div>
             

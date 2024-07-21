@@ -20,11 +20,11 @@
     position: absolute;
     background: @accent;
     height: @lineHeight;
-    width: calc( (100% - @sizes[minLG]) / 2);
+    width: calc( ((100% - @sizes[minLG]) / 2) + 18px);
     left: 0;
 
     @media ( max-width: @sizes[ maxLG ] ) {
-      width: calc( (100% - @sizes[minSM]) / 2);
+      width: calc( ((100% - @sizes[minSM]) / 2) + 18px);
       height: @lineHeightTab;
     }
 

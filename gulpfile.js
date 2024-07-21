@@ -218,7 +218,7 @@ function criticalOtherPagesBuild(done) {
                 minify: true,
                 penthouse: {renderWaitTime: 10000},
                 pathPrefix: pathToTheme,
-                ignore: ['@font-face', '@import', 'background-image']
+                ignore: ['@font-face', 'background-image']
             })
             console.log( 'Generated : critical-' + item.name);
         }, i* 20000)

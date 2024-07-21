@@ -8,7 +8,7 @@
     }
 
     @media ( min-width: @sizes[ minLG ] ) {
-        padding: 84px 0 0;
+        padding: 60px 0 0;
     }
 
     &__title {
@@ -17,6 +17,7 @@
         color: @black;
         text-align: center;
         margin: 0 auto 24px;
+        max-width: 870px;
 
         @media ( min-width: @sizes[ minSM ] ) {
             margin: 0 auto 48px;
@@ -25,7 +26,6 @@
 
         @media ( min-width: @sizes[ minLG ] ) {
             margin: 0 auto 60px;
-            max-width: 870px;
         }
     }
 
@@ -83,6 +83,7 @@
             height: 160px;
             width: 100%;
             overflow: hidden;
+            border-radius: 12px 12px 0 0;
 
             img {
                 object-fit: cover;
@@ -91,6 +92,7 @@
                 @media ( min-width: @sizes[ minSM ] ) {
                     height: auto;
                     width: 100%;
+                    min-height: 264px;
                 }
                 
             }

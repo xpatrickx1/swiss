@@ -3,10 +3,10 @@
 <?php
     if (have_rows('courses_list')):
         while ( have_rows('courses_list')) : the_row();
-            $courses[$coursesCounter]['title'] = get_sub_field('courses_title');
-            $courses[$coursesCounter]['text'] = get_sub_field('courses_text');
-            $courses[$coursesCounter]['link'] = get_sub_field('courses_link');
-            $coursesCounter++;
+            $courses[get_row_index() - 1]['title'] = get_sub_field('item_title');
+            $courses[get_row_index() - 1]['text'] = get_sub_field('item_text');
+            $courses[get_row_index() - 1]['link'] = get_sub_field('item_link');
+            $courses[get_row_index() - 1]['image'] = get_sub_field('courses_image')['url'];
         endwhile;
     endif;
 ?>
@@ -21,9 +21,14 @@
         <?php foreach ( $courses as $key => $item ) : ?>
             <?php $key++ ?>
             <div class="courses__item item">
-
+<!-- <?php print_r( $courses) ;?> -->
+<?php echo have_rows('courses_list') ;?>
                 <div class="item__icon">
-                    <img src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.webp'  ?>" data-src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.webp'  ?>" class="" >
+                    <?php if( have_rows('courses_list')) : ?>
+                        <img src="<?= $item[ 'image' ] ?>" data-src="<?= $item[ 'image' ] ?>" class="" >
+                    <?php else :?>
+                        <img src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.webp'  ?>" data-src="<?= bloginfo('template_url') . '/images/page-front/courses/courses' . $key . '.webp'  ?>" class="" >
+                    <?php endif ; ?>
                 </div>
 
                 <div class="item__bottom">

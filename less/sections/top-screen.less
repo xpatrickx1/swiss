@@ -38,11 +38,11 @@
     position: absolute;
     background: @accent;
     height: @lineHeight;
-    width: calc( (100% - @sizes[minLG]) / 2);
+    width: calc( ((100% - @sizes[minLG]) / 2) + 18px);
     left: 0;
 
     @media ( max-width: @sizes[ maxLG ] ) {
-      width: calc( (100% - @sizes[minSM]) / 2);
+      width: calc( ((100% - @sizes[minSM]) / 2) + 18px);
       height: @lineHeightTab;
     }
 
@@ -84,6 +84,7 @@
     background: @accent;
     height: @lineHeight;
     width: 50%;
+    max-width: 30%;
     left: 0;
     top: @lineHeight;
     z-index: 1;
@@ -91,17 +92,11 @@
     @media ( max-width: @sizes[ maxLG ] ) {
       height: @lineHeightTab;
       top: @lineHeightTab;
-      max-width: 368px;
     }
 
     @media ( max-width: @sizes[ maxSM ] ) {
       height: @lineHeightMob;
       top: 44px;
-      max-width: 40%;
-    }
-
-    @media ( min-width: @sizes[ minMD ] ) {
-      max-width: 40%;
     }
   }
 

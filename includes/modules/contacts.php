@@ -41,28 +41,33 @@
                     alt="swiss"
                     width="48px"
                     height="48px" >   
-
-                <a href="<?= 'mailto:office@' . explode( 'https://', get_site_url())[1];?>" class="contacts__email">
-                    <span><?= 'office@' . explode( 'https:/', get_site_url())[1];?></span>
-                </a>
-            </div>
-            
-            <div class="contacts__phone">
-                <?= get_field('contacts_phone') ? get_field('contacts_phone') : '+41 21 50 50 111' ?>
             </div>
 
-            <div class="contacts__address">
-                <?= get_field('contacts_address') ? get_field('contacts_address') : 'Etudes Modernes SA, Avenue d’Ouchy 4, 1006 Lausanne, Switzerland' ?>
-            </div>
+            <ul class="contacts__list">
+                <?php 
+                    if (has_nav_menu('contacts_menu')) :
+                        $nav_args = array(
+                            'theme_location' => 'contacts_menu',
+                            'container' => '',
+                            'items_wrap' => '%3$s',
+                        );
+                        wp_nav_menu($nav_args);
+                    endif; 
+                ?>
+            </ul>
 
-            <div class="contacts__social">
-                <?php foreach ( $contacts as $key => $item ) : ?>
-                    <?php $key++ ?>
-                    <a href="<?= $item[ 'link' ] ?>" class="">
-                        <?= $item[ 'title' ] ?>
-                    </a>
-                <?php endforeach; ?>
-            </div>
+            <ul class="contacts__social">
+                <?php 
+                    if (has_nav_menu('share_menu')) :
+                        $nav_args = array(
+                            'theme_location' => 'share_menu',
+                            'container' => '',
+                            'items_wrap' => '%3$s',
+                        );
+                        wp_nav_menu($nav_args);
+                    endif; 
+                ?>
+            </ul>
 
             <a href="#" class="button--arrow-up">Scroll Up</a>
         </div>

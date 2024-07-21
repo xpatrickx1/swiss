@@ -3,8 +3,7 @@
 <?php
     if (have_rows('program_list')):
         while ( have_rows('program_list')) : the_row();
-            $program[$programCounter]['text'] = get_sub_field('program_text');
-            $programCounter++;
+            $program[get_row_index() - 1]['text'] = get_sub_field('item_text');
         endwhile;
     endif;
 ?>

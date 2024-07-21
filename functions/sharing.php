@@ -31,10 +31,11 @@ function social_share_code()
         // Add sharing button markup
         $content .= '<div class="share__list">';
         $content .= '<a id="shareFacebook" class="share__item share--facebook" href="' . $facebookURL . '" target="_blank"></a>';
-        $content .= '<a id="shareTwitter" class="share__item share--twitter" href="' . $twitterURL . '" target="_blank"></a>';
         $content .= '<a id="linkedInn" class="share__item share--linkedin" href="' . $linkedInURL . '" target="_blank"></a>';
+        $content .= '<a id="linkedInn" class="share__item share--instagram" href="' . $linkedInURL . '" target="_blank"></a>';
         $content .= '<a id="telegram" class="share__item share--telegram" href="' . $twitterURL . '" target="_blank"></a>';
-        $content .= '<a id="whatsApp" class="share__item share--whatsapp" href="' . $twitterURL . '" target="_blank"></a>';
+        // $content .= '<a id="shareTwitter" class="share__item share--twitter" href="' . $twitterURL . '" target="_blank"></a>';
+        // $content .= '<a id="whatsApp" class="share__item share--whatsapp" href="' . $twitterURL . '" target="_blank"></a>';
         $content .= '</div>';
 
         return $content;

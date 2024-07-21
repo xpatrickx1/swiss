@@ -194,6 +194,8 @@ remove_action( 'wp_head', 'wp_oembed_add_discovery_links', 10 );
 register_nav_menus( array(
     'header_menu' => 'Header Menu',
     'footer_menu' => 'Footer Menu',
+    'contacts_menu' => 'Contacts Menu',
+    'share_menu' => 'Share Menu',
 ));
 
 //custom classes for menu items
@@ -397,6 +399,7 @@ function languages_widgets_init() {
       'after_widget' => '</div>',
       'before_title' => '<h2>',
       'after_title' => '</h2>', ) );
+
   }
   add_action( 'widgets_init', 'languages_widgets_init' );
 

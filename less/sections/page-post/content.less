@@ -49,34 +49,33 @@
 
   }
 
-    ol {
-      position: relative;
-      padding: 0;
+  ol {
+    position: relative;
+    padding: 0;
 
-      li {
-        display: flex;
-        justify-content: flex-start;
+    li {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 0 12px;
+
+      &:before {
+        counter-increment: section;
+        content: counter(section);
+        display: inline-flex;
         align-items: center;
-        margin: 0 0 12px;
-
-        &:before {
-          counter-increment: section;
-          content: counter(section);
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          .font();
-          .fontSize( 16px, 20px );
-          margin-right: 24px;
-          border-radius: 50%;
-          width: 36px;
-          min-width: 36px;
-          height: 36px;
-          color: @black;
-          background-color: @background[bgColorSecondary];
-          background-position: center;
-        }
-
+        justify-content: center;
+        .font();
+        .fontSize( 16px, 20px );
+        margin-right: 24px;
+        border-radius: 50%;
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        color: @black;
+        background-color: @background[bgColorSecondary];
+        background-position: center;
+      }
     }
   }
 
@@ -174,6 +173,8 @@
   }
 
   &--left {
+    position: sticky;
+    top: 100px;
     margin: 36px auto 0;
     order: 3;
 
