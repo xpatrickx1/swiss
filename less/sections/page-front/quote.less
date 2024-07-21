@@ -12,10 +12,12 @@
     &__wrap {
         display: flex;
         align-items: center;
+        flex-direction: column-reverse;
         gap: 24px;
 
         @media ( min-width: @sizes[ minLG ] ) {
             gap: 48px;
+            flex-direction: row;
         }
     }
 
