@@ -16,6 +16,7 @@
 
 <?php
     if (have_rows('focus_list')):
+        $focus = [];
         while ( have_rows('focus_list')) : the_row();
             $focus[get_row_index() - 1]['text'] = get_sub_field('focus_item');
         endwhile;
@@ -29,6 +30,7 @@
 
             <div class="focus__top">
                 <picture class="lazy">
+                    <source data-srcset="<?= get_field('focus_image')['url'] ?>" >
                     <source data-srcset="<?= bloginfo('template_url') . '/images/page-typical/focus.webp' ?>" >
                     <img 
                         src="<?php bloginfo('template_url'); ?>/images/loader.gif"

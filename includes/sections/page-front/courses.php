@@ -2,6 +2,7 @@
 
 <?php
     if (have_rows('courses_list')):
+        $courses = [];
         while ( have_rows('courses_list')) : the_row();
             $courses[get_row_index() - 1]['title'] = get_sub_field('item_title');
             $courses[get_row_index() - 1]['text'] = get_sub_field('item_text');
@@ -21,8 +22,6 @@
         <?php foreach ( $courses as $key => $item ) : ?>
             <?php $key++ ?>
             <div class="courses__item item">
-<!-- <?php print_r( $courses) ;?> -->
-<?php echo have_rows('courses_list') ;?>
                 <div class="item__icon">
                     <?php if( have_rows('courses_list')) : ?>
                         <img src="<?= $item[ 'image' ] ?>" data-src="<?= $item[ 'image' ] ?>" class="" >

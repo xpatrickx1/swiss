@@ -4,7 +4,6 @@ function rand_posts()
     $args = array(
         'post_type' => 'post',
         'posts_per_page' => 4,
-        // 'category__not_in' => 3,
     );
 
     $the_query = new WP_Query($args);
@@ -61,7 +60,7 @@ function rand_posts()
 
 <div class="recent-post">
   <div class="recent-post__title">
-    <?= !is_page_template() ? 'View more news' : 'Our Blog' ?>
+    <?= get_field('recent_post_title') ? get_field('recent_post_title') : 'View more news' ?>
   </div>
   <?php echo do_shortcode("[random-posts]"); ?>
   <a href="/blog/" class="button--secondary">
