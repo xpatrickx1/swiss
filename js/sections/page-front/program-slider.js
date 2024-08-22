@@ -64,15 +64,8 @@ function mediaSize() {
     if (window.matchMedia('(max-width: 767px)').matches) {
         groupItems('.program__list', 4);
         setTimeout(()=> {
-            // if ($('.program__slider').hasClass('slick-initialized')) {
-            //     console.log(1);
-            //     $('.program__slider').not('.slick-initialized').slick();
-            // } else {
-            //     programSlider();
-            //     console.log(2);
-            // }
             programSlider();
-        }, 0);
+        }, 100);
     } 
         
     if (window.matchMedia('(min-width: 768px)').matches) {
@@ -82,8 +75,7 @@ function mediaSize() {
         }
         setTimeout(()=> {
             groupItems('.program__list', 7);
-            console.log('groupItems7');
-        }, 0);
+        }, 100);
     }
 };
     
